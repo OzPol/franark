@@ -10,6 +10,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v5
@@ -29,3 +30,15 @@ jobs:
           name: franark-documentation
           path: docs/_build/html
           retention-days: 14
+      - name: Build and start local containers
+        run: |
+          cp .env.example .env
+          docker compose --profile docs up --build -d
+      - name: Check the running installation
+        run: python tools/smoke_http.py
+      - name: Container logs on failure
+        if: failure()
+        run: docker compose --profile docs logs --no-color
+      - name: Stop test containers
+        if: always()
+        run: docker compose --profile docs down
