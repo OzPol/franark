@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "franark"
+version = "0.1.0"
+description = "A local workbench for evidence-based agent workflows"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "python-dotenv>=1,<2"]
+
+[project.optional-dependencies]
+openai = ["openai>=1.68,<3"]
+dev = ["httpx>=0.27,<1"]
+docs = ["sphinx>=8,<10", "myst-parser>=4,<6"]
+
+[project.scripts]
+franark = "franark.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+franark = ["resources/*.json", "static/*.html"]

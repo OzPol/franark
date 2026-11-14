@@ -1,0 +1,27 @@
+name: Feature or user story
+description: Specify an outcome, evidence, and acceptance criteria.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User story
+      description: Who needs what outcome and why?
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Evidence and context
+      description: Reference approved source locations; keep operational records in their designated work system.
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Observable conditions for completion.
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and open questions

@@ -1,0 +1,24 @@
+name: Bug report
+description: Describe reproducible behavior and its impact.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version and runtime
+  - type: textarea
+    id: validation
+    attributes:
+      label: Redacted evidence and validation

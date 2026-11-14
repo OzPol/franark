@@ -1,0 +1,373 @@
+[
+  {
+    "id": "FW-001",
+    "title": "Bootstrap the private repository and issue backlog",
+    "milestone": "M0 \u2014 Launch",
+    "priority": "P0",
+    "depends_on": [],
+    "story": "As Oz, I can collaborate through a repository with a traceable project backlog.",
+    "acceptance_criteria": [
+      "Starter files are committed to the selected repository.",
+      "Prepared issues have stable FW IDs and dependency references.",
+      "Runtime secrets and operational records are excluded from source control."
+    ]
+  },
+  {
+    "id": "FW-002",
+    "title": "Verify the local Docker launch on the target computer",
+    "milestone": "M0 \u2014 Launch",
+    "priority": "P0",
+    "depends_on": [
+      "FW-001"
+    ],
+    "story": "As Oz, I can start the workbench and documentation with the launch guide.",
+    "acceptance_criteria": [
+      "App health and documentation pages open on localhost.",
+      "The IT demo completes and exports a report.",
+      "Run history remains after an app restart."
+    ]
+  },
+  {
+    "id": "FW-003",
+    "title": "Validate the work API project with synthetic notes",
+    "milestone": "M0 \u2014 Launch",
+    "priority": "P1",
+    "depends_on": [
+      "FW-002"
+    ],
+    "story": "As Oz, I can select a model and obtain a source-backed draft through the work API project.",
+    "acceptance_criteria": [
+      "The selected model supports the structured result contract.",
+      "A synthetic source completes within the configured call limit.",
+      "API usage is visible in the chosen project and credentials stay server-side."
+    ]
+  },
+  {
+    "id": "FW-004",
+    "title": "Run repository CI and documentation checks",
+    "milestone": "M0 \u2014 Launch",
+    "priority": "P1",
+    "depends_on": [
+      "FW-001"
+    ],
+    "story": "As a maintainer, I can verify code and documentation on every proposed change.",
+    "acceptance_criteria": [
+      "Tests and the generated-role check pass in GitHub Actions.",
+      "The strict Sphinx build passes.",
+      "Built documentation is available as an Actions artifact."
+    ]
+  },
+  {
+    "id": "FW-005",
+    "title": "Introduce structured operational task records",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P0",
+    "depends_on": [
+      "FW-002"
+    ],
+    "story": "As Oz, I can inspect explicit actions with owners, dates, and supporting source excerpts.",
+    "acceptance_criteria": [
+      "Task schema distinguishes explicit commitments, direct instructions, and inferred proposals.",
+      "Missing owners and dates remain unknown.",
+      "Action records link to evidence and acceptance criteria."
+    ]
+  },
+  {
+    "id": "FW-006",
+    "title": "Add versioned evidence records and source locations",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P0",
+    "depends_on": [
+      "FW-005"
+    ],
+    "story": "As a reviewer, I can trace each finding to the precise source and version.",
+    "acceptance_criteria": [
+      "Evidence has stable IDs, source locators, timestamps, and text offsets or page references.",
+      "Source updates preserve prior versions used by completed runs.",
+      "Review results distinguish supported claims from uncertain interpretations."
+    ]
+  },
+  {
+    "id": "FW-007",
+    "title": "Implement the approved priority-policy engine",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P0",
+    "depends_on": [
+      "FW-005",
+      "FW-006"
+    ],
+    "story": "As PM FRAN, I can explain priority using owner-approved rules and referenced facts.",
+    "acceptance_criteria": [
+      "Rules and tie-breakers are versioned configuration.",
+      "Rule evaluation and arithmetic are deterministic and tested.",
+      "Each priority decision records policy version, facts, assumptions, and unresolved ties."
+    ]
+  },
+  {
+    "id": "FW-008",
+    "title": "Support project check-ins and task reconciliation",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P1",
+    "depends_on": [
+      "FW-005"
+    ],
+    "story": "As Oz, I can add instructions after a meeting without duplicating existing work.",
+    "acceptance_criteria": [
+      "Check-ins attach to a project and existing task records.",
+      "Candidate duplicates are identified before creating new tasks.",
+      "Changes to scope, ownership, or deadlines retain their source and history."
+    ]
+  },
+  {
+    "id": "FW-009",
+    "title": "Consolidate clarification questions without blocking unrelated work",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P1",
+    "depends_on": [
+      "FW-005",
+      "FW-006"
+    ],
+    "story": "As Oz, I receive a concise packet of questions with the work each answer unblocks.",
+    "acceptance_criteria": [
+      "Repeated questions are merged.",
+      "Blocking and nonblocking gaps are distinguished.",
+      "Unrelated ready tasks continue while questions await an answer."
+    ]
+  },
+  {
+    "id": "FW-010",
+    "title": "Load versioned workflows from configuration",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P1",
+    "depends_on": [
+      "FW-005"
+    ],
+    "story": "As a developer, I can add a specialist through role and workflow configuration.",
+    "acceptance_criteria": [
+      "Dependency graphs are validated before use.",
+      "New role instances are registered by capability and project.",
+      "Inserted specialists retain separate review gates."
+    ]
+  },
+  {
+    "id": "FW-011",
+    "title": "Add per-role runtime and model profiles",
+    "milestone": "M1 \u2014 Reliable workflows",
+    "priority": "P2",
+    "depends_on": [
+      "FW-003",
+      "FW-010"
+    ],
+    "story": "As an operator, I can select an appropriate runtime profile for each role.",
+    "acceptance_criteria": [
+      "Profiles are separate from role instructions and business data.",
+      "Changing a provider does not change core task/result contracts.",
+      "Usage is attributable to a role and run."
+    ]
+  },
+  {
+    "id": "FW-012",
+    "title": "Connect an approved Outlook or Teams source",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P0",
+    "depends_on": [
+      "FW-006",
+      "FW-016"
+    ],
+    "story": "As Oz, I can investigate selected work discussions without manually pasting each source.",
+    "acceptance_criteria": [
+      "Choose and document one source, authentication path, and scoped access.",
+      "Incremental cursors and source IDs prevent duplicate ingestion.",
+      "A synthetic or authorized test source can be fetched and traced to its original location."
+    ]
+  },
+  {
+    "id": "FW-013",
+    "title": "Add invoice and document ingestion",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P1",
+    "depends_on": [
+      "FW-006"
+    ],
+    "story": "As an analyst, I can extract source-backed fields from contracts, invoices, and reference documents.",
+    "acceptance_criteria": [
+      "Extraction preserves document/version/page references.",
+      "Totals, currencies, periods, and uncertain OCR fields are validated.",
+      "A small representative evaluation set has recorded expected results."
+    ]
+  },
+  {
+    "id": "FW-014",
+    "title": "Add a read-only WellSky reporting adapter",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P1",
+    "depends_on": [
+      "FW-006",
+      "FW-016"
+    ],
+    "story": "As a WellSky analyst, I can prepare and execute permitted diagnostic reporting queries.",
+    "acceptance_criteria": [
+      "Identify the exact accessible database and supported reporting route.",
+      "The connector enforces read-only credentials, query scope, row limits, and timeouts.",
+      "Results retain query text, parameters, evidence links, and execution metadata."
+    ]
+  },
+  {
+    "id": "FW-015",
+    "title": "Connect one ticket or draft destination",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P1",
+    "depends_on": [
+      "FW-005",
+      "FW-016"
+    ],
+    "story": "As Oz, I can move accepted work into the chosen operational destination.",
+    "acceptance_criteria": [
+      "Select the actual ticket system or email-draft destination.",
+      "Payloads are scoped, deduplicated, and linked to their task.",
+      "Execution returns an external ID and observed outcome."
+    ]
+  },
+  {
+    "id": "FW-016",
+    "title": "Implement exact-action policy checks and scoped tool adapters",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P0",
+    "depends_on": [
+      "FW-005",
+      "FW-006"
+    ],
+    "story": "As the project owner, I can define which precise actions run automatically and which need a decision.",
+    "acceptance_criteria": [
+      "Policies evaluate actor, project, action type, resource, and exact payload.",
+      "A changed payload is checked again.",
+      "Tools enforce permissions outside model prompts and record authorization and outcome."
+    ]
+  },
+  {
+    "id": "FW-017",
+    "title": "Deliver the first IT provider assessment",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P1",
+    "depends_on": [
+      "FW-007",
+      "FW-013"
+    ],
+    "story": "As management, I can compare supported IT service options and their costs.",
+    "acceptance_criteria": [
+      "Contracted scope and invoice spending are reconciled.",
+      "Comparable requirements, service levels, transition costs, and assumptions are visible.",
+      "The report includes evidence, alternatives, and concrete decisions required."
+    ]
+  },
+  {
+    "id": "FW-018",
+    "title": "Deliver a forms or vendor-portal tablet pilot",
+    "milestone": "M2 \u2014 Work integrations",
+    "priority": "P1",
+    "depends_on": [
+      "FW-008",
+      "FW-016"
+    ],
+    "story": "As Oz, I receive a testable implementation with only the physical account/device test remaining.",
+    "acceptance_criteria": [
+      "Current process and required form fields are documented.",
+      "Implementation passes agreed functional checks with synthetic data.",
+      "The handoff includes account connection, tablet steps, expected results, and failure capture."
+    ]
+  },
+  {
+    "id": "FW-019",
+    "title": "Add durable scheduling and bounded rework",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P1",
+    "depends_on": [
+      "FW-009",
+      "FW-010",
+      "FW-016"
+    ],
+    "story": "As Oz, I can run recurring work with recoverable state and bounded correction loops.",
+    "acceptance_criteria": [
+      "Scheduler and queue survive process restarts.",
+      "Retries and rework have limits, idempotency, and clear stop reasons.",
+      "Cancellation and interrupted-step reconciliation are tested."
+    ]
+  },
+  {
+    "id": "FW-020",
+    "title": "Add usage accounting and enforceable run budgets",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P1",
+    "depends_on": [
+      "FW-011"
+    ],
+    "story": "As an operator, I can understand and bound model spending.",
+    "acceptance_criteria": [
+      "Input/output usage is recorded by role, step, and run.",
+      "Model-specific prices are versioned with their source/date.",
+      "Admission and reservation rules prevent new work beyond the configured budget."
+    ]
+  },
+  {
+    "id": "FW-021",
+    "title": "Add authenticated remote and multiuser access",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P2",
+    "depends_on": [
+      "FW-016"
+    ],
+    "story": "As an organization, we can share an approved installation with scoped access.",
+    "acceptance_criteria": [
+      "Authenticated users have explicit project membership.",
+      "Remote transport, access checks, and session handling are tested.",
+      "User actions and operational runs are attributable."
+    ]
+  },
+  {
+    "id": "FW-022",
+    "title": "Add database migrations and tested backup restoration",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P1",
+    "depends_on": [
+      "FW-005",
+      "FW-019"
+    ],
+    "story": "As an operator, I can upgrade and restore saved work reliably.",
+    "acceptance_criteria": [
+      "Schema migrations are versioned and tested on representative data.",
+      "Backup and restore procedures are exercised.",
+      "Retention settings cover source notes, artifacts, events, and backups."
+    ]
+  },
+  {
+    "id": "FW-023",
+    "title": "Add documentation publishing and journal feeds",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P2",
+    "depends_on": [
+      "FW-004"
+    ],
+    "story": "As a reader, I can navigate versioned guides, articles, FAQs, and project updates.",
+    "acceptance_criteria": [
+      "Choose the documentation audience and hosting destination.",
+      "Version selection and blog/RSS behavior are documented.",
+      "Published pages pass navigation and content checks."
+    ]
+  },
+  {
+    "id": "FW-024",
+    "title": "Evaluate executable packaging after the local pilot",
+    "milestone": "M3 \u2014 Controlled autonomy",
+    "priority": "P2",
+    "depends_on": [
+      "FW-002",
+      "FW-022"
+    ],
+    "story": "As Oz, I can choose an installer or executable if it simplifies operating the application.",
+    "acceptance_criteria": [
+      "Compare container, Python, and executable update/backup paths.",
+      "Document startup, credential storage, and platform support.",
+      "Package only after the selected path passes target-machine validation."
+    ]
+  }
+]

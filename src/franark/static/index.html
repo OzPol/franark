@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franark</title>
+<style>
+  :root{font-family:Inter,ui-sans-serif,system-ui,sans-serif;color:#16221e;background:#faf7ee;line-height:1.5}
+  *{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit;color:inherit}main>*{min-width:0}pre{white-space:pre-wrap;overflow-wrap:anywhere}
+  header{padding:24px max(24px,calc((100vw - 1280px)/2));border-bottom:1px solid #d5ded5;background:#fff;display:flex;align-items:center;gap:18px}
+  h1{font-size:27px;letter-spacing:-1px;margin:0}header p{margin:0;color:#506259}.badge{padding:5px 12px;border:1px solid #b3c5b3;border-radius:30px;background:#fbebbd;font-size:13px;margin-left:auto;white-space:nowrap}
+  main{max-width:1328px;margin:auto;padding:28px 24px;display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:start}
+  .panel{padding:24px;background:#fff;border:1px solid #d9e2d7;border-radius:14px}.panel+.panel{margin-top:20px}
+  h2{font-size:18px;margin:0 0 16px}h3{font-size:15px;margin:0 0 8px}.muted,small{color:#526258;font-size:13px}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 5px}input,select,textarea{width:100%;border:1px solid #bfcbbe;border-radius:7px;padding:9px;background:#fff}textarea{min-height:240px;resize:vertical}
+  button,.link{cursor:pointer;border:1px solid #8fa58b;border-radius:7px;padding:9px 13px;background:#f3d680;text-decoration:none;font-size:14px;display:inline-block}button:hover,.link:hover{background:#edc65f}button:disabled{opacity:.6;cursor:wait}.secondary{background:#fff}
+  .actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}.run{width:100%;display:block;text-align:left;background:#fff;margin:8px 0;padding:11px}.run.selected{background:#fff5d7;border-color:#709365}.run small{display:block}.timeline{border-left:2px solid #cbdcbe;margin:20px 0 0 5px;padding-left:22px}.event{position:relative;padding:0 0 23px}.event:before{position:absolute;content:"";width:10px;height:10px;border-radius:50%;background:#5b8050;left:-28px;top:6px}.event pre{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:14px;background:#faf8f0;padding:16px;border-radius:8px;margin:8px 0}.event .meta{font-size:12px;color:#526258}.error{color:#8d2828}.empty{padding:70px 10px;text-align:center;color:#526258}.roles details{font-size:13px;border-top:1px solid #e0e6de;padding:9px 0}.roles summary{cursor:pointer;font-weight:600}.roles p{margin:8px 0}.status{border-bottom:1px solid #e0e6de;padding-bottom:16px}.status p{margin:4px 0}.notice{padding:10px 12px;background:#f2f5eb;border-radius:7px;font-size:13px}
+  @media(max-width:900px){main{grid-template-columns:1fr}header{flex-wrap:wrap}.badge{margin-left:0}}
+</style>
+<header><h1>Franark</h1><p>FRAN and her working team</p><span class="badge" id="mode">Loading</span></header>
+<main>
+ <aside>
+  <section class="panel">
+   <h2>Start a run</h2><p class="notice" id="runtime-note"></p>
+   <form id="run-form">
+    <label for="title">Title</label><input id="title" value="IT meeting follow-up" maxlength="150" required>
+    <label for="domain">Workflow</label><select id="domain"><option value="general">General operations</option><option value="it" selected>IT and vendor assessment</option><option value="wellsky">WellSky investigation</option><option value="software">Forms and automation</option></select>
+    <label for="notes">Meeting notes or instructions</label><textarea id="notes" placeholder="Paste notes, commitments, and questions" minlength="10" maxlength="20000" required></textarea>
+    <div class="actions"><button id="start" type="submit">Run workflow</button><button id="sample" type="button" class="secondary">Use sample</button></div>
+   </form><p id="message" class="muted" role="status"></p>
+  </section>
+  <section class="panel"><h2>Recent runs</h2><div id="runs"></div></section>
+  <section class="panel roles"><h2>Role catalog</h2><div id="roles"></div></section>
+ </aside>
+ <section class="panel"><div id="detail"><div class="empty">Start a workflow to inspect assignments, agent outputs, review decisions, and questions.</div></div></section>
+</main>
+<script>
+let configuration, selected, active=false;
+const $=id=>document.getElementById(id);
+const titleCase=value=>value.replaceAll('_',' ').replace(/\b\w/g,c=>c.toUpperCase());
+async function api(path,options){const response=await fetch(path,options);if(!response.ok){const data=await response.json();throw Error(typeof data.detail==='string'?data.detail:'Check the input and retry.')}return response.json()}
+function el(tag,text,cls){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node}
+async function refresh(){
+ const runs=await api('/api/runs');$('runs').replaceChildren();active=runs.some(run=>['queued','running'].includes(run.status));
+ if(!runs.length)$('runs').append(el('p','No saved runs yet.','muted'));
+ for(const run of runs){const button=el('button',undefined,'run'+(selected===run.id?' selected':''));button.append(el('strong',run.title),el('small',`${titleCase(run.status)} · ${run.runtime} · ${new Date(run.created_at).toLocaleString()}`));button.onclick=()=>{selected=run.id;refresh().catch(showError)};$('runs').append(button)}
+ if(selected)await showRun(selected);
+}
+async function showRun(id){
+ const run=await api('/api/runs/'+id),container=$('detail');container.replaceChildren();
+ const heading=el('div',undefined,'status');heading.append(el('h2',run.title),el('p',`${titleCase(run.status)} · ${run.runtime} · ${titleCase(run.domain)}`),el('p',run.message,'muted'));
+ const link=el('a','Download run report','link');link.href='/api/runs/'+id+'/report';heading.append(link);container.append(heading);
+ const source=el('details');source.append(el('summary','Submitted notes'),el('pre',run.notes));container.append(source);
+ const timeline=el('div',undefined,'timeline');
+ for(const event of run.events){const card=el('article',undefined,'event');card.append(el('h3',titleCase(event.step_id)),el('div',`${configuration.roles.find(role=>role.role_id===event.agent_id)?.display_name||titleCase(event.agent_id)} · ${event.kind} · ${new Date(event.created_at).toLocaleTimeString()}`,'meta'));
+  if(event.result){card.append(el('pre',event.result.summary),el('div','Outcome: '+event.result.outcome,'meta'));if(event.result.questions.length){card.append(el('strong','Questions'));const list=el('ul');event.result.questions.forEach(q=>list.append(el('li',q)));card.append(list)}}
+  timeline.append(card)}container.append(timeline);
+}
+function showError(error){$('message').textContent=error.message;$('message').className='error'}
+$('sample').onclick=()=>{$('notes').value=configuration.sample_notes};
+$('run-form').onsubmit=async event=>{event.preventDefault();$('start').disabled=true;$('message').className='muted';$('message').textContent='Starting workflow…';
+ try{const run=await api('/api/runs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({title:$('title').value,notes:$('notes').value,domain:$('domain').value,request_key:crypto.randomUUID()})});selected=run.run_id;$('message').textContent='Run saved. Agent activity appears on the right.';await refresh()}catch(error){showError(error)}finally{$('start').disabled=false}};
+(async()=>{configuration=await api('/api/config');$('mode').textContent=configuration.runtime==='demo'?'Demo mode':'OpenAI · '+configuration.model;
+ $('runtime-note').textContent=configuration.runtime==='demo'?'Demo mode uses a deterministic sample workflow. No model API calls are made.':'This run sends the submitted notes to the configured model API and uses billable API requests. Limit: '+configuration.max_calls+' calls.';
+ for(const role of configuration.roles){const item=el('details');item.append(el('summary',role.display_name+' · '+titleCase(role.role_id)),el('p',role.purpose));$('roles').append(item)}
+ if(!configuration.configured)showError(Error('Configure the API key and model in .env, then restart.'));await refresh();setInterval(()=>{if(active)refresh().catch(showError)},2000);
+})().catch(showError);
+</script>
+</html>

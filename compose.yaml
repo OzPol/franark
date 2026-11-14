@@ -1,0 +1,31 @@
+services:
+  app:
+    build:
+      context: .
+      target: app
+    env_file: .env
+    environment:
+      FRANARK_DATA_DIR: /app/data
+    ports:
+      - "127.0.0.1:8765:8765"
+    volumes:
+      - franark_data:/app/data
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 90s
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8765/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+  docs:
+    profiles: [docs]
+    build:
+      context: .
+      target: docs
+    ports:
+      - "127.0.0.1:8766:8000"
+    restart: unless-stopped
+
+volumes:
+  franark_data:
