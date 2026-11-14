@@ -10,7 +10,9 @@
       "Starter files are committed to the selected repository.",
       "Prepared issues have stable FW IDs and dependency references.",
       "Runtime secrets and operational records are excluded from source control."
-    ]
+    ],
+    "github_number": 1,
+    "github_url": "https://github.com/OzPol/franark/issues/1"
   },
   {
     "id": "FW-002",
@@ -25,7 +27,9 @@
       "App health and documentation pages open on localhost.",
       "The IT demo completes and exports a report.",
       "Run history remains after an app restart."
-    ]
+    ],
+    "github_number": 2,
+    "github_url": "https://github.com/OzPol/franark/issues/2"
   },
   {
     "id": "FW-003",
@@ -40,7 +44,9 @@
       "The selected model supports the structured result contract.",
       "A synthetic source completes within the configured call limit.",
       "API usage is visible in the chosen project and credentials stay server-side."
-    ]
+    ],
+    "github_number": 3,
+    "github_url": "https://github.com/OzPol/franark/issues/3"
   },
   {
     "id": "FW-004",
@@ -55,7 +61,9 @@
       "Tests and the generated-role check pass in GitHub Actions.",
       "The strict Sphinx build passes.",
       "Built documentation is available as an Actions artifact."
-    ]
+    ],
+    "github_number": 4,
+    "github_url": "https://github.com/OzPol/franark/issues/4"
   },
   {
     "id": "FW-005",
@@ -70,7 +78,9 @@
       "Task schema distinguishes explicit commitments, direct instructions, and inferred proposals.",
       "Missing owners and dates remain unknown.",
       "Action records link to evidence and acceptance criteria."
-    ]
+    ],
+    "github_number": 5,
+    "github_url": "https://github.com/OzPol/franark/issues/5"
   },
   {
     "id": "FW-006",
@@ -85,7 +95,9 @@
       "Evidence has stable IDs, source locators, timestamps, and text offsets or page references.",
       "Source updates preserve prior versions used by completed runs.",
       "Review results distinguish supported claims from uncertain interpretations."
-    ]
+    ],
+    "github_number": 6,
+    "github_url": "https://github.com/OzPol/franark/issues/6"
   },
   {
     "id": "FW-007",
@@ -101,7 +113,9 @@
       "Rules and tie-breakers are versioned configuration.",
       "Rule evaluation and arithmetic are deterministic and tested.",
       "Each priority decision records policy version, facts, assumptions, and unresolved ties."
-    ]
+    ],
+    "github_number": 7,
+    "github_url": "https://github.com/OzPol/franark/issues/7"
   },
   {
     "id": "FW-008",
@@ -116,7 +130,9 @@
       "Check-ins attach to a project and existing task records.",
       "Candidate duplicates are identified before creating new tasks.",
       "Changes to scope, ownership, or deadlines retain their source and history."
-    ]
+    ],
+    "github_number": 8,
+    "github_url": "https://github.com/OzPol/franark/issues/8"
   },
   {
     "id": "FW-009",
@@ -132,7 +148,9 @@
       "Repeated questions are merged.",
       "Blocking and nonblocking gaps are distinguished.",
       "Unrelated ready tasks continue while questions await an answer."
-    ]
+    ],
+    "github_number": 9,
+    "github_url": "https://github.com/OzPol/franark/issues/9"
   },
   {
     "id": "FW-010",
@@ -147,7 +165,9 @@
       "Dependency graphs are validated before use.",
       "New role instances are registered by capability and project.",
       "Inserted specialists retain separate review gates."
-    ]
+    ],
+    "github_number": 10,
+    "github_url": "https://github.com/OzPol/franark/issues/10"
   },
   {
     "id": "FW-011",
@@ -163,7 +183,9 @@
       "Profiles are separate from role instructions and business data.",
       "Changing a provider does not change core task/result contracts.",
       "Usage is attributable to a role and run."
-    ]
+    ],
+    "github_number": 11,
+    "github_url": "https://github.com/OzPol/franark/issues/11"
   },
   {
     "id": "FW-012",
@@ -179,7 +201,9 @@
       "Choose and document one source, authentication path, and scoped access.",
       "Incremental cursors and source IDs prevent duplicate ingestion.",
       "A synthetic or authorized test source can be fetched and traced to its original location."
-    ]
+    ],
+    "github_number": 12,
+    "github_url": "https://github.com/OzPol/franark/issues/12"
   },
   {
     "id": "FW-013",
@@ -194,7 +218,9 @@
       "Extraction preserves document/version/page references.",
       "Totals, currencies, periods, and uncertain OCR fields are validated.",
       "A small representative evaluation set has recorded expected results."
-    ]
+    ],
+    "github_number": 13,
+    "github_url": "https://github.com/OzPol/franark/issues/13"
   },
   {
     "id": "FW-014",
@@ -210,7 +236,9 @@
       "Identify the exact accessible database and supported reporting route.",
       "The connector enforces read-only credentials, query scope, row limits, and timeouts.",
       "Results retain query text, parameters, evidence links, and execution metadata."
-    ]
+    ],
+    "github_number": 14,
+    "github_url": "https://github.com/OzPol/franark/issues/14"
   },
   {
     "id": "FW-015",
@@ -226,7 +254,9 @@
       "Select the actual ticket system or email-draft destination.",
       "Payloads are scoped, deduplicated, and linked to their task.",
       "Execution returns an external ID and observed outcome."
-    ]
+    ],
+    "github_number": 15,
+    "github_url": "https://github.com/OzPol/franark/issues/15"
   },
   {
     "id": "FW-016",
@@ -242,7 +272,9 @@
       "Policies evaluate actor, project, action type, resource, and exact payload.",
       "A changed payload is checked again.",
       "Tools enforce permissions outside model prompts and record authorization and outcome."
-    ]
+    ],
+    "github_number": 16,
+    "github_url": "https://github.com/OzPol/franark/issues/16"
   },
   {
     "id": "FW-017",
@@ -258,7 +290,9 @@
       "Contracted scope and invoice spending are reconciled.",
       "Comparable requirements, service levels, transition costs, and assumptions are visible.",
       "The report includes evidence, alternatives, and concrete decisions required."
-    ]
+    ],
+    "github_number": 17,
+    "github_url": "https://github.com/OzPol/franark/issues/17"
   },
   {
     "id": "FW-018",
@@ -274,7 +308,9 @@
       "Current process and required form fields are documented.",
       "Implementation passes agreed functional checks with synthetic data.",
       "The handoff includes account connection, tablet steps, expected results, and failure capture."
-    ]
+    ],
+    "github_number": 18,
+    "github_url": "https://github.com/OzPol/franark/issues/18"
   },
   {
     "id": "FW-019",
@@ -291,7 +327,9 @@
       "Scheduler and queue survive process restarts.",
       "Retries and rework have limits, idempotency, and clear stop reasons.",
       "Cancellation and interrupted-step reconciliation are tested."
-    ]
+    ],
+    "github_number": 19,
+    "github_url": "https://github.com/OzPol/franark/issues/19"
   },
   {
     "id": "FW-020",
@@ -306,7 +344,9 @@
       "Input/output usage is recorded by role, step, and run.",
       "Model-specific prices are versioned with their source/date.",
       "Admission and reservation rules prevent new work beyond the configured budget."
-    ]
+    ],
+    "github_number": 20,
+    "github_url": "https://github.com/OzPol/franark/issues/20"
   },
   {
     "id": "FW-021",
@@ -321,7 +361,9 @@
       "Authenticated users have explicit project membership.",
       "Remote transport, access checks, and session handling are tested.",
       "User actions and operational runs are attributable."
-    ]
+    ],
+    "github_number": 21,
+    "github_url": "https://github.com/OzPol/franark/issues/21"
   },
   {
     "id": "FW-022",
@@ -337,7 +379,9 @@
       "Schema migrations are versioned and tested on representative data.",
       "Backup and restore procedures are exercised.",
       "Retention settings cover source notes, artifacts, events, and backups."
-    ]
+    ],
+    "github_number": 22,
+    "github_url": "https://github.com/OzPol/franark/issues/22"
   },
   {
     "id": "FW-023",
@@ -352,7 +396,9 @@
       "Choose the documentation audience and hosting destination.",
       "Version selection and blog/RSS behavior are documented.",
       "Published pages pass navigation and content checks."
-    ]
+    ],
+    "github_number": 23,
+    "github_url": "https://github.com/OzPol/franark/issues/23"
   },
   {
     "id": "FW-024",
@@ -368,6 +414,8 @@
       "Compare container, Python, and executable update/backup paths.",
       "Document startup, credential storage, and platform support.",
       "Package only after the selected path passes target-machine validation."
-    ]
+    ],
+    "github_number": 24,
+    "github_url": "https://github.com/OzPol/franark/issues/24"
   }
 ]

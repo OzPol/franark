@@ -4,7 +4,7 @@ Local pilot checks completed with Python 3.12:
 
 | Check | Result |
 |---|---|
-| Unit and application tests | 22 passed. |
+| Unit and application tests | 23 passed. |
 | Included domain workflows | General, IT, WellSky, and software demo paths completed. |
 | Structured model adapter | Fake-client contract, incomplete-response handling, and call-cap tests passed. |
 | Generated role reference | Matches the canonical role configuration. |
