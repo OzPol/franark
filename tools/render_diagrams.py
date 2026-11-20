@@ -215,8 +215,14 @@ if(location.hash)showView(location.hash.slice(1));
 
 def combined_scene():
     elements=[]
-    for index,view in enumerate(load_views()):
-        ox,oy=(index%2)*1600,(index//2)*1240
+    views=load_views()
+    row_offsets=[]
+    next_y=0
+    for start in range(0,len(views),2):
+        row_offsets.append(next_y)
+        next_y+=max(view['height'] for view in views[start:start+2])+180
+    for index,view in enumerate(views):
+        ox,oy=(index%2)*1600,row_offsets[index//2]
         page=excalidraw(view)
         frame_id='view-frame-'+view['id']
         frame=deepcopy(page['elements'][0])
