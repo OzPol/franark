@@ -1,0 +1,36 @@
+digraph stack {
+
+graph [rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.45", ranksep="0.55", fontname="DejaVu Sans", fontsize=17, color="#cbd5e1"];
+node [shape=box, style="rounded,filled", fillcolor="#edf5fc", color="#6b8aa5", fontcolor="#111111", fontname="DejaVu Sans", fontsize=16, margin="0.20,0.14", penwidth=1.3];
+edge [color="#52677a", fontname="DejaVu Sans", fontsize=12, fontcolor="#111111", arrowsize=0.75];
+
+browser [label="Browser / tablet
+HTML, forms and pen input"];
+api [label="FastAPI boundary
+JWT verification · roles · record scope", fillcolor="#dcebf8", penwidth=2];
+forms [label="Form lifecycle
+Validation · review · PDF / exports"];
+agents [label="Agent registry and workflows
+FRAN · specialists · reviewer"];
+methods [label="Information tools
+Select · delta · pack
+Project · summarize · timeline"];
+store [label="SQLAlchemy repository
+Transactions · concurrency · audit"];
+sqlite [label="SQLite
+Working synthetic pilot", fillcolor="#eef6ee"];
+sql [label="Azure SQL
+Managed-identity adapter
+Tenant connection pending", style="rounded,filled,dashed", fillcolor="#f5f5f5"];
+llm [label="Model adapter
+Bounded OpenAI calls"];
+browser -> api; api -> forms; api -> agents; api -> methods;
+agents -> methods [label="granted tools"];
+agents -> llm; forms -> llm [label="optional QA"];
+forms -> store; methods -> store [label="telemetry"];
+agents -> store [label="run history"];
+store -> sqlite; store -> sql [style=dashed];
+{rank=same; forms; agents; methods;}
+{rank=same; sqlite; sql;}
+
+}

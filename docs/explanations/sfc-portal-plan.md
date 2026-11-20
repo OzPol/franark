@@ -1,8 +1,9 @@
 # SFC application hub: requirements and design choices
 
-Status: proposed architecture, not a deployed SFC service. Updated 2026-11-19.
-This records Oz's requirements and open decisions without assuming a particular
-assessment form, license entitlement, signature policy or vendor API.
+Status: synthetic pilot implemented; SFC tenant connections pending. Updated 2026-11-20.
+This is my requirements and design record. I have selected SFC's tenant as the
+deployment target. The exact assessment, licenses, signature policy and vendor
+contracts remain open.
 Observable outcomes are listed in [the proposed user stories](sfc-user-stories.md).
 
 ## Intended behavior
@@ -79,10 +80,10 @@ with resource-specific permissions or narrowly scoped submission invitations.
 Remote signing links belong to a separate signature flow. For in-person signing,
 the employee session and the client's signer identity/consent are different records.
 
-Use separate development and SFC environments: app registrations, credentials,
-databases, storage, queues and audit records. Changing deployment configuration
-can reuse the code without mixing personal and SFC data. A multi-tenant SaaS
-product can be a later decision; it is not required for two isolated deployments.
+I will keep development/test and production resources separate within SFC's
+tenant, with distinct app registrations, databases, storage and audit records.
+A personal tenant deployment is unnecessary. A multi-tenant SaaS product remains
+a separate future decision.
 
 ## API, database, files and analytics
 
@@ -192,7 +193,7 @@ drafts/manual review are a useful first pilot. Power Automate is an alternative
 for simple tenant-owned routing. Automatic sending requires a configured mailbox,
 recipient policy, event/outbox handling, deduplication, rate limits and retry rules.
 
-Tone is a versioned communication template, initially based on Oz's examples:
+My communication style is represented by versioned templates:
 
 > Hi [staff name], could you check one detail in [record link]? The birthdate
 > entered on this assessment differs from the previous record. It may be an
@@ -200,8 +201,8 @@ Tone is a versioned communication template, initially based on Oz's examples:
 
 The email does not need to reproduce client identifiers or both birthdates. Show
 the exact comparison in the authorized application. Use a clearly identified
-SFC/Franark service sender or approved delegated identity; matching Oz's tone does
-not imply silently sending as Oz. Final wording and notification thresholds remain
+SFC/Franark service sender or an approved delegated identity; my writing style
+does not imply permission to send under my personal identity. Final wording and notification thresholds remain
 configurable.
 
 For FAQs and how-to resources, use source-linked drafts, an editorial review
@@ -231,16 +232,16 @@ outcomes and explicit program rules.
 
 ## Incremental delivery and open questions
 
-1. Implemented now: callable method suite, model-tool adapter, telemetry, local
-   lab, research documentation and tests.
+1. Implemented: callable methods, model tools, telemetry, assessment/review pilot,
+   generic exports, JWT verification, SQL adapter, diagrams and tests.
 2. Select the first form, note template, online/offline behavior and platform path.
 3. Configure a development Entra app and authenticated API with program/record
    permissions; verify isolation before accepting operational records.
-4. Implement one complete form/review/PDF/note/export slice using synthetic data.
+4. Map the verified assessment and note template into the existing pilot flow.
 5. Connect approved Azure, model, file and notification accounts; validate each
    connector with narrow test scope.
 6. Confirm signature and vendor transfer requirements; pilot with designated staff.
 
-The morning connection work depends on tenant permissions and the selected
-platform. Credentials alone cannot supply missing form rules or vendor contracts.
-Do not paste API keys, database passwords or tokens into chat or source control.
+My connection work depends on SFC tenant permissions and verified contracts.
+I will keep credentials in the approved secret store and retain non-secret
+configuration and acceptance records in the project.

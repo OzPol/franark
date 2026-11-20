@@ -46,11 +46,13 @@ def run_saved(store, run_id, settings):
     store.update(run_id, "running")
     started = time.perf_counter_ns()
     runtime = None
+    owner_subject = "local-pilot"
     try:
         record = store.get(run_id)
+        owner_subject = record["owner_subject"]
         runtime = LimitedRuntime(
             DemoRuntime() if settings.runtime == "demo" else OpenAIRuntime(
-                settings, on_usage=lambda usage: store.record_measurement("model", usage, run_id)),
+                settings, on_usage=lambda usage: store.record_measurement("model", usage, run_id, owner_subject)),
             settings.max_calls,
         )
         registry = AgentRegistry()
@@ -70,7 +72,7 @@ def run_saved(store, run_id, settings):
             task, registry,
             project_grants=frozenset(METHODS),
             tool_handlers=handlers(lambda measured: store.record_measurement(
-                "capability", {key: value for key, value in measured.items() if key != "result"}, run_id)),
+                "capability", {key: value for key, value in measured.items() if key != "result"}, run_id, owner_subject)),
             on_event=lambda kind, step_id, agent_id, result: store.event(
                 run_id, kind, step_id, agent_id, result),
         )
@@ -85,7 +87,7 @@ def run_saved(store, run_id, settings):
             "agent_calls": runtime.calls if runtime else 0,
             "model_requests": getattr(runtime.delegate, "request_count", 0) if runtime else 0,
             "max_calls": settings.max_calls, "max_tool_rounds": settings.max_tool_rounds,
-        }, run_id)
+        }, run_id, owner_subject)
 
 
 def markdown_report(record):

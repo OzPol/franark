@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased - PILOT-001
+
+- Added an executable synthetic assessment/review/correction flow, signature acknowledgement, case-note templates and approved generic exports.
+- Added bounded optional AI quality review and unsent email-draft output.
+- Added single-tenant JWT/role verification and owner/assigned-reviewer record scope.
+- Moved shared persistence behind SQLAlchemy with an Azure SQL managed-identity adapter and additive local migration.
+- Added an SFC App Service template, Azure runtime image, PowerShell launcher, collection checklist and four system diagrams.
+- Kept work on `capability-foundation`; no merge to `main`.
+
 ## Unreleased — CAP-001
 
 - Added six validated information methods, input schemas and bounded model tool calling.

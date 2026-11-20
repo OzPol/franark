@@ -11,3 +11,4 @@ docs/_build/
 build/
 dist/
 .pytest_cache/
+output/

@@ -1,0 +1,21 @@
+[
+  {
+    "form_id": "workflow-pilot",
+    "version": "1.0",
+    "title": "Assessment workflow test",
+    "description": "Synthetic workflow fixture. This is not a DOEA 701 assessment or a vendor import specification.",
+    "synthetic": true,
+    "requires_signature": true,
+    "fields": [
+      {"field_id": "client_name", "label": "Synthetic client name", "type": "text", "required": true},
+      {"field_id": "birthdate", "label": "Birthdate", "type": "date", "required": true, "compare_previous": true, "not_future": true},
+      {"field_id": "assessment_date", "label": "Assessment date", "type": "date", "required": true, "not_future": true},
+      {"field_id": "service", "label": "Service discussed", "type": "choice", "choices": ["Meals", "Transportation", "Other"], "required": true},
+      {"field_id": "units", "label": "Requested units", "type": "integer", "minimum": 0, "maximum": 1000, "required": true},
+      {"field_id": "observations", "label": "Recorded observations", "type": "multiline", "required": true},
+      {"field_id": "next_action", "label": "Recorded next action", "type": "multiline", "required": true}
+    ],
+    "note_template": "Synthetic assessment record\nClient: {{client_name}}\nBirthdate recorded: {{birthdate}}\nAssessment date: {{assessment_date}}\nService discussed: {{service}}\nRequested units: {{units}}\nRecorded observations: {{observations}}\nRecorded next action: {{next_action}}",
+    "example": {"client_name": "Synthetic Example", "birthdate": "1940-02-10", "assessment_date": "2026-11-19", "service": "Meals", "units": 2, "observations": "The synthetic client requested information about meal services.", "next_action": "Confirm the available program options."}
+  }
+]

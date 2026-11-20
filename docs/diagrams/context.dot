@@ -1,0 +1,31 @@
+digraph context {
+
+graph [rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.45", ranksep="0.55", fontname="DejaVu Sans", fontsize=17, color="#cbd5e1"];
+node [shape=box, style="rounded,filled", fillcolor="#edf5fc", color="#6b8aa5", fontcolor="#111111", fontname="DejaVu Sans", fontsize=16, margin="0.20,0.14", penwidth=1.3];
+edge [color="#52677a", fontname="DejaVu Sans", fontsize=12, fontcolor="#111111", arrowsize=0.75];
+
+staff [label="SFC employees
+Case work and nutrition"];
+reviewer [label="Assigned reviewer"];
+app [label="Franark
+Forms · review · agents · research", fillcolor="#dcebf8", penwidth=2];
+records [label="Application records
+SQLite pilot / Azure SQL adapter"];
+model [label="OpenAI API
+Configured adapter; live test pending", style="rounded,filled,dashed", fillcolor="#f5f5f5"];
+identity [label="SFC Microsoft Entra
+Sign-in and app assignments", style="rounded,filled,dashed", fillcolor="#f5f5f5"];
+mail [label="Outlook / signature providers
+Connections pending", style="rounded,filled,dashed", fillcolor="#f5f5f5"];
+vendors [label="eCIRTS / WellSky / SAMS
+Import contracts pending", style="rounded,filled,dashed", fillcolor="#f5f5f5"];
+staff -> app; reviewer -> app; identity -> app [style=dashed, label="validated identity"];
+app -> records [label="versioned records"];
+app -> model [style=dashed, label="bounded requests"];
+app -> mail [style=dashed]; app -> vendors [style=dashed];
+{rank=same; staff; reviewer; identity;}
+{rank=same; records; model;}
+{rank=same; mail; vendors;}
+records -> mail [style=invis]; model -> vendors [style=invis];
+
+}

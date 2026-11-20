@@ -7,4 +7,5 @@
 0002-configurable-agents
 0003-evidence-and-authority
 0004-information-capabilities
+0005-sfc-tenant-pilot
 ```

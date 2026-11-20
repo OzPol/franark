@@ -71,3 +71,15 @@ The SFC portal requirements and options are recorded in
 `docs/explanations/sfc-portal-plan.md`. Form selection, offline behavior, licenses,
 production identity and supported import interfaces remain open decisions. This
 scope does not mark integration milestones or existing GitHub issues complete.
+
+## PILOT-001 - SFC tenant test path
+
+Target: SFC's tenant, with separate test/production resources. Source remains on
+`capability-foundation`; `main` stays unchanged. The synthetic pilot implements
+drafts, submissions, acknowledgements, validation, review, corrections, note/PDF
+generation, generic exports and optional model QA. Tenant authorization code,
+Azure SQL support, deployment preparation and system diagrams are included.
+
+`PILOT_CHECKLIST.md` records the test path and remaining collection work. Official
+form mapping, live tenant/model/SQL tests, physical device checks, attachment
+integration, signature-provider acceptance and vendor delivery are not complete.

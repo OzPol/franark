@@ -6,6 +6,8 @@
 run-with-python
 connect-model
 use-capabilities
+test-assessment-pilot
+deploy-sfc-pilot
 add-agent
 write-documentation
 import-backlog

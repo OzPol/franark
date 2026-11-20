@@ -1,7 +1,10 @@
 # Franark
 
-A local workbench for a configurable team of agents: project management,
-coordination, operational work, domain analysis, review, and reporting.
+An assessment pilot and workbench for a configurable agent team, with versioned
+records, review, source-linked information tools and measured results.
+
+SFC is the hosted deployment target. Development continues on
+`capability-foundation`; the current work is not merged to `main`.
 
 **Repository name:** `franark`. Python package and CLI: `franark`. FRAN is the Project Manager; specialist agents form her working team.
 
@@ -35,11 +38,24 @@ The [method record](docs/research/methods.md) includes equations, source papers 
 standards, adaptation choices and limitations. The [research ledger](docs/research/idea-log.md)
 tracks the history; the [SFC portal plan](docs/explanations/sfc-portal-plan.md)
 compares architecture, forms, signatures, identity, storage and export options.
-Those portal integrations are proposed, not connected or deployed by this change.
+A synthetic assessment/review pilot, tenant authentication code and Azure SQL
+adapter are implemented. Live SFC account connections and actual program forms
+remain unverified.
 
 For Linux/macOS, the copy command is `cp .env.example .env`.
 
-## Included in v0.1
+## Assessment pilot
+
+Start with `./Start-Franark.ps1`, then open `/portal`. The pilot supports drafts,
+submitted revisions, signature acknowledgements, rule findings, human review,
+corrections, case-note templates and generic PDF/JSON/CSV outputs. The test form
+is explicitly synthetic and is not an official 701 instrument.
+
+Read [PILOT_CHECKLIST.md](PILOT_CHECKLIST.md) for the test sequence and collection
+list. [System diagrams](docs/explanations/system-diagrams.md) are available in the
+app at `/architecture`.
+
+## Original agent workbench
 
 - Local browser dashboard for notes, workflow selection, agent activity, and reports.
 - Ten configurable roles and a reusable agent/registry/workflow interface.

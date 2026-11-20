@@ -32,7 +32,7 @@ references describe caller-provided material, not independently authenticated fa
 ## A02: exact state differences — `memory.delta`
 
 Background: [RFC 6902](https://www.rfc-editor.org/rfc/rfc6902.html), Bryan and
-Nottingham (2013). We implement an `add`/`remove`/`replace` subset; arrays are
+Nottingham (2013). The implementation supports an `add`/`remove`/`replace` subset; arrays are
 replaced atomically. This is not a general-purpose implementation of all JSON
 Patch operations and is not a learned predictive model.
 
@@ -49,7 +49,7 @@ an error verdict: a reviewer must establish the correct value.
 ## A03: exact repeated-pattern encoding — `memory.pack`
 
 Background: Deutsch (1996), [RFC 1951](https://www.rfc-editor.org/rfc/rfc1951.html).
-DEFLATE combines repeated-substring coding and Huffman coding. We use Python
+DEFLATE combines repeated-substring coding and Huffman coding. The codec uses Python
 `zlib`, with the compressed stream carried in a base64 JSON envelope.
 
 $$

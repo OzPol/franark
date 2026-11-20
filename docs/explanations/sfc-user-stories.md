@@ -1,7 +1,7 @@
 # Proposed SFC portal user stories
 
-Captured from Oz's requirements on 2026-11-19. These are proposed capabilities,
-not implemented features or a priority ranking. Program staff must validate the
+My requirements record, started 2026-11-19. These describe the target capabilities;
+the synthetic pilot implements a test subset. Program staff must validate the
 real form, workflow rules and acceptance examples before their pilot.
 
 | ID | User story | Observable acceptance condition |
@@ -18,9 +18,9 @@ real form, workflow rules and acceptance examples before their pilot.
 | SFC-KNW-001 | As an employee, I can find current FAQs and how-to resources without searching unrelated client files. | Published entries cite approved sources, owner and effective version; agent drafts pass editorial review; access rules prevent client-data disclosure. |
 | SFC-VND-001 | As a vendor, I can submit designated material without seeing employee resources or other vendor/client records. | A scoped guest/invitation route allows only the designated operation and resource; access can expire or be revoked. |
 | SFC-ANL-001 | As an authorized analyst, I can report on standardized records and process performance. | Approved views/datasets reconcile to submissions and respect scope; Power BI/Fabric connection and capacity are verified separately. |
-| SFC-RES-001 | As Oz, I can inspect how agent information methods affect quality, latency and resource use. | Method/workflow/model identities, dataset versions, settings, observed usage and scored outcomes can be traced and reproduced without placing operational data in Git. |
+| SFC-RES-001 | As the platform owner, I can inspect how agent information methods affect quality, latency and resource use. | Method/workflow/model identities, dataset versions, settings, observed usage and scored outcomes can be traced and reproduced without placing operational data in Git. |
 
 The design alternatives and unresolved requirements are maintained in
-[the SFC portal plan](sfc-portal-plan.md). The working information-method foundation
-supports SFC-RES-001 in local development; it does not complete the operational
-stories above.
+[the SFC portal plan](sfc-portal-plan.md). The synthetic pilot demonstrates form entry, review, corrections, generic outputs
+and research measurements. Actual program forms, live SFC connections and
+production acceptance remain separate from these demonstrations.

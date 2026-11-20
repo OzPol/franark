@@ -6,8 +6,8 @@ Updated: 2026-11-19. Applies to: local Franark development. Scope: CAP-001.
 
 ## Context
 
-Oz requested real callable mechanisms, established methods, performance measures
-and an academic history before optimizing or pursuing novelty. Existing Franark
+I am building callable mechanisms, observed performance measures and an academic
+record before optimizing components or pursuing novelty. Existing Franark
 uses Python, FastAPI, configurable agents, a DAG workflow, SQLite and an OpenAI
 adapter. The six-tab simulator demonstrates concepts but not an integrated system.
 

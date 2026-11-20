@@ -8,11 +8,12 @@ from urllib.request import Request, urlopen
 from uuid import uuid4
 
 
-def fetch(url, payload=None):
+def fetch(url, payload=None, raw=False):
     body = json.dumps(payload).encode() if payload is not None else None
     request = Request(url, data=body, headers={"Content-Type": "application/json"})
     with urlopen(request, timeout=3) as response:
-        return response.read().decode()
+        content = response.read()
+        return content if raw else content.decode()
 
 
 def wait_for(url, check):
@@ -58,9 +59,31 @@ def main():
     assert len(results) == 10
     assert results[-1]["result"]["outcome"] == "accepted"
     assert "DEMO" in fetch(args.url + "/api/runs/" + run_id + "/report")
+    assert "Assessment and review" in fetch(args.url + "/portal")
+    assert "System diagrams" in fetch(args.url + "/architecture")
+    for name in ("context", "stack", "workflow", "records"):
+        assert "<svg" in fetch(args.url + "/assets/diagrams/" + name + ".svg")
+    form = json.loads(fetch(args.url + "/api/portal/forms"))[0]
+    assessment = json.loads(fetch(args.url + "/api/portal/submissions", {
+        "form_key": "workflow-pilot@1.0", "client_ref": "SYN-SMOKE-" + uuid4().hex[:8],
+        "answers": form["example"], "request_key": uuid4().hex,
+    }))
+    path = args.url + "/api/portal/submissions/" + assessment["id"]
+    assessment = json.loads(fetch(path + "/submit", {
+        "expected_revision": assessment["revision"],
+        "signature": {"signer_name": "Synthetic installation signer", "consent": True},
+    }))
+    assert assessment["state"] == "ready_for_review"
+    assessment = json.loads(fetch(path + "/review", {
+        "expected_revision": assessment["revision"], "decision": "approve",
+        "resolution": "Synthetic installation record checked against the fixture.",
+    }))
+    assert assessment["state"] == "approved"
+    assert fetch(path + "/export/pdf", raw=True).startswith(b"%PDF-")
+    assert json.loads(fetch(path + "/export/json"))["vendor_import_ready"] is False
     if not args.skip_docs:
         wait_for(args.docs_url, lambda content: "Franark" in content)
-    print("HTTP checks passed: application, ten-step workflow, report" +
+    print("HTTP checks passed: application, ten-step agent workflow, assessment submission/review, PDF/JSON exports, diagrams" +
           (", and documentation." if not args.skip_docs else "."))
 
 
