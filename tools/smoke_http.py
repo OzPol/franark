@@ -61,8 +61,11 @@ def main():
     assert "DEMO" in fetch(args.url + "/api/runs/" + run_id + "/report")
     assert "Assessment and review" in fetch(args.url + "/portal")
     assert "System diagrams" in fetch(args.url + "/architecture")
-    for name in ("context", "stack", "workflow", "records"):
-        assert "<svg" in fetch(args.url + "/assets/diagrams/" + name + ".svg")
+    for view in json.loads(fetch(args.url + "/assets/diagrams")):
+        path = args.url + "/assets/diagrams/" + view["id"]
+        assert "<svg" in fetch(path + ".svg")
+        assert json.loads(fetch(path + ".excalidraw"))["type"] == "excalidraw"
+        assert fetch(path + ".mmd").strip()
     form = json.loads(fetch(args.url + "/api/portal/forms"))[0]
     assessment = json.loads(fetch(args.url + "/api/portal/submissions", {
         "form_key": "workflow-pilot@1.0", "client_ref": "SYN-SMOKE-" + uuid4().hex[:8],

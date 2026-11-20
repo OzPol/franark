@@ -1,7 +1,8 @@
 # SFC pilot checkpoint
 
 Deployment target: SFC Microsoft tenant. Working branch: `capability-foundation`.
-Pull request: <https://github.com/OzPol/franark/pull/26>. `main` remains unchanged.
+The initial pilot was merged through pull request 26. Diagram revisions continue
+on `capability-foundation`; no merge is part of the diagram revision.
 
 ## Working pilot
 
@@ -15,7 +16,7 @@ Pull request: <https://github.com/OzPol/franark/pull/26>. `main` remains unchang
 - Six measured information methods and research records.
 - Microsoft Entra JWT/role verification and record ownership checks.
 - Shared SQLAlchemy storage, local SQLite and an Azure SQL managed-identity adapter.
-- Four architecture diagrams in the app and documentation.
+- Twelve focused system views with Mermaid and native editable Excalidraw files.
 
 The form is a synthetic workflow fixture, not an official 701 instrument. The
 pilot does not submit to eCIRTS/WellSky/SAMS or validate a signature provider.
@@ -57,7 +58,10 @@ SFC's tenant; I am not setting up a separate personal tenant deployment.
 - [ ] Client identifiers, duplicate/uncertain matches and prior-record authority.
 - [ ] Signature/consent/witness requirements and accepted correction process.
 - [ ] In-person versus remote signing needs and any existing provider agreement/API rights.
-- [ ] Offline requirements and available iPad/Surface/laptop test devices.
+- [ ] Device/browser choices and available iPad, Surface, laptop and phone test devices.
+- [ ] Paper-to-structured capture path: manual transcription, assisted extraction or both.
+- [ ] Offline draft scope, device protection, synchronization timing and conflict policy.
+- [ ] Organizational source for mapping service IDs to staff positions and access groups.
 - [ ] Program access rules, reviewer assignments and pilot acceptance examples.
 
 ### Data, files and analytics

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+<title id="title">Contracted Services</title><desc id="desc">Service structure is distinct from the staff reporting chart.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52677a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1060" fill="white"/>
+<text x="42" y="38" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">01 / FRANARK / SERVICE HIERARCHY</tspan>
+</text>
+<text x="42" y="88" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="bold" fill="#111111">
+<tspan x="42" dy="0">Contracted Services</tspan>
+</text>
+<text x="42" y="123" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Service structure is distinct from the staff reporting chart.</tspan>
+</text>
+<polyline points="720.0,290 720,350 300,350 300.0,430" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720.0,290 720.0,430" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720.0,290 720,350 1140,350 1140.0,430" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="300.0,510 300,590 205,590 205.0,670" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="300.0,510 300,590 515,590 515.0,670" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="1140.0,510 1140.0,670" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="560" y="210" width="320" height="80" rx="8" fill="#F4D06F" stroke="#587b42" stroke-width="1.8"/>
+<text x="720.0" y="258.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Contracted Services</tspan>
+</text>
+<rect x="140" y="430" width="320" height="80" rx="8" fill="#79AEE3" stroke="#587b42" stroke-width="1.8"/>
+<text x="300.0" y="478.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="300.0" dy="0">Supportive Aging</tspan>
+</text>
+<rect x="560" y="430" width="320" height="80" rx="8" fill="#8FCB87" stroke="#587b42" stroke-width="1.8"/>
+<text x="720.0" y="478.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Nutrition</tspan>
+</text>
+<rect x="980" y="430" width="320" height="80" rx="8" fill="#B39DDB" stroke="#587b42" stroke-width="1.8"/>
+<text x="1140.0" y="478.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1140.0" dy="0">ADC</tspan>
+</text>
+<rect x="70" y="670" width="270" height="80" rx="8" fill="#C9DFF4" stroke="#587b42" stroke-width="1.8"/>
+<text x="205.0" y="718.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="205.0" dy="0">Case Management</tspan>
+</text>
+<rect x="380" y="670" width="270" height="80" rx="8" fill="#C9DFF4" stroke="#587b42" stroke-width="1.8"/>
+<text x="515.0" y="718.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="515.0" dy="0">FAH</tspan>
+</text>
+<rect x="1005" y="670" width="270" height="80" rx="8" fill="#DED4EF" stroke="#587b42" stroke-width="1.8"/>
+<text x="1140.0" y="718.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1140.0" dy="0">CRC</tspan>
+</text>
+<text x="70" y="875" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="70" dy="0">Stable service IDs support a later mapping to positions, staff and access groups.</tspan>
+<tspan x="70" dy="23.75">The supplied FAH and CRC labels are retained without inferred reporting relationships.</tspan>
+</text>
+<line x1="42" y1="982" x2="1398" y2="982" stroke="#d2d9e0"/>
+<text x="42" y="1012" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Lines: service relationships / Colors: service areas / Service IDs are independent of staff positions</tspan>
+</text>
+<text x="42" y="1039" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">SFC service model / Organizational reporting relationships require a separate source</tspan>
+</text>
+</svg>

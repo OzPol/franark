@@ -1,0 +1,2596 @@
+{
+  "schema_version": 1,
+  "views": [
+    {
+      "id": "services",
+      "number": 1,
+      "title": "Contracted Services",
+      "notation": "Service hierarchy",
+      "caption": "Service structure is distinct from the staff reporting chart.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "contracted_services",
+          "label": "Contracted Services",
+          "x": 560,
+          "y": 210,
+          "w": 320,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#F4D06F",
+          "concept": "sfc.contracted-services"
+        },
+        {
+          "id": "supportive_aging",
+          "label": "Supportive Aging",
+          "x": 140,
+          "y": 430,
+          "w": 320,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#79AEE3",
+          "concept": "sfc.supportive-aging"
+        },
+        {
+          "id": "nutrition",
+          "label": "Nutrition",
+          "x": 560,
+          "y": 430,
+          "w": 320,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#8FCB87",
+          "concept": "sfc.nutrition"
+        },
+        {
+          "id": "adc",
+          "label": "ADC",
+          "x": 980,
+          "y": 430,
+          "w": 320,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#B39DDB",
+          "concept": "sfc.adc"
+        },
+        {
+          "id": "case_management",
+          "label": "Case Management",
+          "x": 70,
+          "y": 670,
+          "w": 270,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#C9DFF4",
+          "concept": "sfc.case-management"
+        },
+        {
+          "id": "fah",
+          "label": "FAH",
+          "x": 380,
+          "y": 670,
+          "w": 270,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#C9DFF4",
+          "concept": "sfc.fah"
+        },
+        {
+          "id": "crc",
+          "label": "CRC",
+          "x": 1005,
+          "y": 670,
+          "w": 270,
+          "h": 80,
+          "status": "existing",
+          "shape": "rectangle",
+          "fill": "#DED4EF",
+          "concept": "sfc.crc"
+        }
+      ],
+      "edges": [
+        {
+          "from": "contracted_services",
+          "to": "supportive_aging",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              720,
+              350
+            ],
+            [
+              300,
+              350
+            ]
+          ]
+        },
+        {
+          "from": "contracted_services",
+          "to": "nutrition",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "contracted_services",
+          "to": "adc",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              720,
+              350
+            ],
+            [
+              1140,
+              350
+            ]
+          ]
+        },
+        {
+          "from": "supportive_aging",
+          "to": "case_management",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              300,
+              590
+            ],
+            [
+              205,
+              590
+            ]
+          ]
+        },
+        {
+          "from": "supportive_aging",
+          "to": "fah",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              300,
+              590
+            ],
+            [
+              515,
+              590
+            ]
+          ]
+        },
+        {
+          "from": "adc",
+          "to": "crc",
+          "start": "S",
+          "end": "N"
+        }
+      ],
+      "groups": [],
+      "notes": [
+        {
+          "x": 70,
+          "y": 875,
+          "text": "Stable service IDs support a later mapping to positions, staff and access groups.\nThe supplied FAH and CRC labels are retained without inferred reporting relationships."
+        }
+      ],
+      "legend": "Lines: service relationships / Colors: service areas / Service IDs are independent of staff positions",
+      "footnote": "SFC service model / Organizational reporting relationships require a separate source",
+      "mermaid": "flowchart TB\n  contracted_services[\"Contracted Services\"]\n  supportive_aging[\"Supportive Aging\"]\n  nutrition[\"Nutrition\"]\n  adc[\"ADC\"]\n  case_management[\"Case Management\"]\n  fah[\"FAH\"]\n  crc[\"CRC\"]\n  contracted_services --> supportive_aging\n  contracted_services --> nutrition\n  contracted_services --> adc\n  supportive_aging --> case_management\n  supportive_aging --> fah\n  adc --> crc\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  class contracted_services,supportive_aging,nutrition,adc,case_management,fah,crc existing;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  style contracted_services fill:#F4D06F,color:#111\n  style supportive_aging fill:#79AEE3,color:#111\n  style nutrition fill:#8FCB87,color:#111\n  style adc fill:#B39DDB,color:#111\n  style case_management fill:#C9DFF4,color:#111\n  style fah fill:#C9DFF4,color:#111\n  style crc fill:#DED4EF,color:#111\n"
+    },
+    {
+      "id": "capture",
+      "number": 2,
+      "title": "Capture options",
+      "notation": "Layered option map",
+      "caption": "Devices, input methods, client software and capture channels are separate concepts.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "computer",
+          "label": "Computer",
+          "x": 80,
+          "y": 280,
+          "w": 245,
+          "h": 70,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "tablet",
+          "label": "Tablet",
+          "x": 360,
+          "y": 280,
+          "w": 245,
+          "h": 70,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "phone",
+          "label": "Phone",
+          "x": 80,
+          "y": 400,
+          "w": 245,
+          "h": 70,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "keyboard",
+          "label": "Keyboard",
+          "x": 800,
+          "y": 280,
+          "w": 245,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "touch",
+          "label": "Touch",
+          "x": 1080,
+          "y": 280,
+          "w": 245,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "pen",
+          "label": "Pen",
+          "x": 800,
+          "y": 400,
+          "w": 245,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "browser",
+          "label": "Browser",
+          "x": 80,
+          "y": 650,
+          "w": 245,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "native_app",
+          "label": "Native app",
+          "x": 360,
+          "y": 650,
+          "w": 245,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "digital_form",
+          "label": "Digital form",
+          "x": 800,
+          "y": 650,
+          "w": 245,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "paper_form",
+          "label": "Paper form",
+          "x": 1080,
+          "y": 650,
+          "w": 245,
+          "h": 70,
+          "status": "existing",
+          "shape": "document"
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "devices",
+          "label": "Device options",
+          "x": 42,
+          "y": 190,
+          "w": 640,
+          "h": 320
+        },
+        {
+          "id": "input_methods",
+          "label": "Input methods",
+          "x": 758,
+          "y": 190,
+          "w": 640,
+          "h": 320
+        },
+        {
+          "id": "client_software",
+          "label": "Client software",
+          "x": 42,
+          "y": 550,
+          "w": 640,
+          "h": 300
+        },
+        {
+          "id": "capture_channels",
+          "label": "Capture channels",
+          "x": 758,
+          "y": 550,
+          "w": 640,
+          "h": 300
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 780,
+          "text": "Browser is the current client.\nA native app is an independent future option."
+        },
+        {
+          "x": 80,
+          "y": 920,
+          "text": "Device and input choices can be combined. Physical tablet, phone and pen testing remains pending."
+        }
+      ],
+      "legend": "Gray: logical device choice / Blue: pilot feature / Green: retained paper channel / Dashed: proposed",
+      "mermaid": "block-beta\n columns 2\n block:devices\n   columns 2\n   devices_title[\"Device options\"]:2\n   computer[\"Computer\"] tablet[\"Tablet\"]\n   phone[\"Phone\"] space\n end\n block:inputs\n   columns 2\n   inputs_title[\"Input methods\"]:2\n   keyboard[\"Keyboard\"] touch[\"Touch\"]\n   pen[\"Pen\"] space\n end\n block:clients\n   columns 2\n   clients_title[\"Client software\"]:2\n   browser[\"Browser\"] native_app[\"Native app\"]\n end\n block:channels\n   columns 2\n   channels_title[\"Capture channels\"]:2\n   digital_form[\"Digital form\"] paper_form[\"Paper form\"]\n end\n classDef proposed fill:#ffffff,stroke:#788493,stroke-dasharray:6 4,color:#111;\n classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n class native_app proposed;\n class keyboard,touch,pen,browser,digital_form pilot;\n class computer,tablet,phone logical;\n class paper_form existing;\n\n classDef heading fill:transparent,stroke:transparent,color:#111;\n class devices_title,inputs_title,clients_title,channels_title heading;\n"
+    },
+    {
+      "id": "continuity",
+      "number": 3,
+      "title": "Connectivity and paper",
+      "notation": "Alternative paths",
+      "caption": "Offline entry is a proposed route. Paper remains an explicit existing route.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "digital_entry",
+          "label": "Digital form",
+          "x": 90,
+          "y": 260,
+          "w": 280,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "server_draft",
+          "label": "Server draft",
+          "x": 600,
+          "y": 260,
+          "w": 280,
+          "h": 70,
+          "status": "pilot",
+          "shape": "database"
+        },
+        {
+          "id": "device_draft",
+          "label": "Offline draft",
+          "x": 90,
+          "y": 500,
+          "w": 280,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "synchronize",
+          "label": "Synchronize",
+          "x": 580,
+          "y": 500,
+          "w": 280,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "conflict_review",
+          "label": "Resolve conflict",
+          "x": 1050,
+          "y": 500,
+          "w": 280,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "paper",
+          "label": "Paper form",
+          "x": 90,
+          "y": 740,
+          "w": 250,
+          "h": 70,
+          "status": "existing",
+          "shape": "document"
+        },
+        {
+          "id": "scan",
+          "label": "Scan",
+          "x": 470,
+          "y": 740,
+          "w": 250,
+          "h": 70,
+          "status": "existing",
+          "shape": "rectangle"
+        },
+        {
+          "id": "sharepoint",
+          "label": "SharePoint",
+          "x": 850,
+          "y": 740,
+          "w": 250,
+          "h": 70,
+          "status": "existing",
+          "shape": "rectangle"
+        },
+        {
+          "id": "transcribe",
+          "label": "Manual transcription",
+          "x": 1010,
+          "y": 830,
+          "w": 320,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [
+        {
+          "from": "digital_entry",
+          "to": "server_draft",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "digital_entry",
+          "to": "device_draft",
+          "start": "S",
+          "end": "N",
+          "dashed": true
+        },
+        {
+          "from": "device_draft",
+          "to": "synchronize",
+          "start": "E",
+          "end": "W",
+          "dashed": true
+        },
+        {
+          "from": "synchronize",
+          "to": "conflict_review",
+          "start": "E",
+          "end": "W",
+          "dashed": true
+        },
+        {
+          "from": "conflict_review",
+          "to": "server_draft",
+          "start": "N",
+          "end": "E",
+          "via": [
+            [
+              1190,
+              390
+            ],
+            [
+              940,
+              390
+            ],
+            [
+              940,
+              295
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "paper",
+          "to": "scan",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "scan",
+          "to": "sharepoint",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "sharepoint",
+          "to": "transcribe",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              975,
+              820
+            ],
+            [
+              1170,
+              820
+            ]
+          ],
+          "dashed": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "connected",
+          "label": "Connected digital route",
+          "x": 42,
+          "y": 190,
+          "w": 1356,
+          "h": 200
+        },
+        {
+          "id": "offline",
+          "label": "Proposed device route",
+          "x": 42,
+          "y": 430,
+          "w": 1356,
+          "h": 200,
+          "dashed": true
+        },
+        {
+          "id": "paper_route",
+          "label": "Existing paper route",
+          "x": 42,
+          "y": 670,
+          "w": 1356,
+          "h": 280
+        }
+      ],
+      "notes": [
+        {
+          "x": 90,
+          "y": 930,
+          "text": "Manual transcription into Franark is a proposed bridge. Scans are not structured assessment answers.",
+          "size": 18
+        }
+      ],
+      "legend": "Blue: pilot implementation / Green: existing process / Dashed: unverified connection or proposed option",
+      "footnote": "Offline browser storage, synchronization, conflict policy and device protection are not implemented",
+      "mermaid": "flowchart TB\n  subgraph connected[\"Connected digital route\"]\n    digital_entry[\"Digital form\"]\n    server_draft[(\"Server draft\")]\n  end\n  subgraph offline[\"Proposed device route\"]\n    device_draft[\"Offline draft\"]\n    synchronize[\"Synchronize\"]\n    conflict_review[\"Resolve conflict\"]\n  end\n  subgraph paper_route[\"Existing paper route\"]\n    paper[\"Paper form\"]\n    scan[\"Scan\"]\n    sharepoint[\"SharePoint\"]\n    transcribe[\"Manual transcription\"]\n  end\n  digital_entry --> server_draft\n  digital_entry -.-> device_draft\n  device_draft -.-> synchronize\n  synchronize -.-> conflict_review\n  conflict_review -.-> server_draft\n  paper --> scan\n  scan --> sharepoint\n  sharepoint -.-> transcribe\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class digital_entry,server_draft pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  class paper,scan,sharepoint existing;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  class device_draft,synchronize,conflict_review,transcribe proposed;\n"
+    },
+    {
+      "id": "context",
+      "number": 4,
+      "title": "People and application surfaces",
+      "notation": "System context",
+      "caption": "Each surface has a distinct purpose. A knowledge hub remains a proposed surface.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "employee",
+          "label": "Employee",
+          "x": 80,
+          "y": 290,
+          "w": 250,
+          "h": 80,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "reviewer",
+          "label": "Assigned reviewer",
+          "x": 80,
+          "y": 480,
+          "w": 250,
+          "h": 80,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "research_operator",
+          "label": "Research operator",
+          "x": 80,
+          "y": 690,
+          "w": 250,
+          "h": 80,
+          "status": "logical",
+          "shape": "rectangle"
+        },
+        {
+          "id": "portal",
+          "label": "Assessment portal",
+          "x": 560,
+          "y": 300,
+          "w": 300,
+          "h": 90,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "workbench",
+          "label": "Agent workbench",
+          "x": 990,
+          "y": 300,
+          "w": 300,
+          "h": 90,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "lab",
+          "label": "Capabilities lab",
+          "x": 990,
+          "y": 650,
+          "w": 300,
+          "h": 90,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "knowledge_hub",
+          "label": "Knowledge hub",
+          "x": 560,
+          "y": 650,
+          "w": 300,
+          "h": 90,
+          "status": "proposed",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [
+        {
+          "from": "employee",
+          "to": "portal",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              440,
+              330
+            ],
+            [
+              440,
+              345
+            ]
+          ]
+        },
+        {
+          "from": "employee",
+          "to": "workbench",
+          "start": "N",
+          "end": "N",
+          "via": [
+            [
+              205,
+              230
+            ],
+            [
+              1140,
+              230
+            ]
+          ]
+        },
+        {
+          "from": "reviewer",
+          "to": "portal",
+          "start": "E",
+          "end": "S",
+          "via": [
+            [
+              440,
+              520
+            ],
+            [
+              440,
+              440
+            ],
+            [
+              710,
+              440
+            ]
+          ]
+        },
+        {
+          "from": "research_operator",
+          "to": "lab",
+          "start": "E",
+          "end": "S",
+          "via": [
+            [
+              440,
+              730
+            ],
+            [
+              440,
+              805
+            ],
+            [
+              1140,
+              805
+            ]
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "people",
+          "label": "People",
+          "x": 42,
+          "y": 190,
+          "w": 330,
+          "h": 660
+        },
+        {
+          "id": "franark",
+          "label": "Franark boundary",
+          "x": 500,
+          "y": 190,
+          "w": 880,
+          "h": 660
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 915,
+          "text": "A client signs within the employee session; this model does not introduce client accounts.\nThe service hierarchy is separate from user roles and application permissions."
+        }
+      ],
+      "legend": "Solid: actor or implemented surface / Dashed: proposed surface",
+      "mermaid": "flowchart TB\n  subgraph people[\"People\"]\n    employee[\"Employee\"]\n    reviewer[\"Assigned reviewer\"]\n    research_operator[\"Research operator\"]\n  end\n  subgraph franark[\"Franark boundary\"]\n    portal[\"Assessment portal\"]\n    workbench[\"Agent workbench\"]\n    lab[\"Capabilities lab\"]\n    knowledge_hub[\"Knowledge hub\"]\n  end\n  employee --> portal\n  employee --> workbench\n  reviewer --> portal\n  research_operator --> lab\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class portal,workbench,lab pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  class employee,reviewer,research_operator logical;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  class knowledge_hub proposed;\n"
+    },
+    {
+      "id": "integrations",
+      "number": 5,
+      "title": "Platform connections",
+      "notation": "Integration map",
+      "caption": "Adapter implementation and live account verification are different readiness states.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "sign_in",
+          "label": "Sign-in adapter",
+          "x": 100,
+          "y": 240,
+          "w": 380,
+          "h": 70,
+          "status": "prepared",
+          "shape": "rectangle"
+        },
+        {
+          "id": "entra",
+          "label": "Microsoft Entra",
+          "x": 900,
+          "y": 240,
+          "w": 380,
+          "h": 70,
+          "status": "prepared",
+          "shape": "rectangle"
+        },
+        {
+          "id": "repository",
+          "label": "Record repository",
+          "x": 100,
+          "y": 420,
+          "w": 380,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "azure_sql",
+          "label": "Azure SQL",
+          "x": 900,
+          "y": 420,
+          "w": 380,
+          "h": 70,
+          "status": "prepared",
+          "shape": "database"
+        },
+        {
+          "id": "model_adapter",
+          "label": "Model adapter",
+          "x": 100,
+          "y": 600,
+          "w": 380,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "openai",
+          "label": "OpenAI API",
+          "x": 900,
+          "y": 600,
+          "w": 380,
+          "h": 70,
+          "status": "prepared",
+          "shape": "rectangle"
+        },
+        {
+          "id": "notification_draft",
+          "label": "Notification draft",
+          "x": 100,
+          "y": 780,
+          "w": 380,
+          "h": 70,
+          "status": "pilot",
+          "shape": "document"
+        },
+        {
+          "id": "microsoft_graph",
+          "label": "Microsoft Graph",
+          "x": 900,
+          "y": 780,
+          "w": 380,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [
+        {
+          "from": "sign_in",
+          "to": "entra",
+          "start": "E",
+          "end": "W",
+          "label": "verify identity",
+          "label_at": [
+            560,
+            265
+          ],
+          "dashed": true
+        },
+        {
+          "from": "repository",
+          "to": "azure_sql",
+          "start": "E",
+          "end": "W",
+          "label": "persist records",
+          "label_at": [
+            560,
+            445
+          ],
+          "dashed": true
+        },
+        {
+          "from": "model_adapter",
+          "to": "openai",
+          "start": "E",
+          "end": "W",
+          "label": "bounded requests",
+          "label_at": [
+            560,
+            625
+          ],
+          "dashed": true
+        },
+        {
+          "from": "notification_draft",
+          "to": "microsoft_graph",
+          "start": "E",
+          "end": "W",
+          "label": "future delivery",
+          "label_at": [
+            560,
+            805
+          ],
+          "dashed": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "adapters",
+          "label": "Franark adapters",
+          "x": 42,
+          "y": 170,
+          "w": 520,
+          "h": 730
+        },
+        {
+          "id": "sfc_services",
+          "label": "SFC account connections",
+          "x": 820,
+          "y": 170,
+          "w": 578,
+          "h": 730
+        }
+      ],
+      "notes": [
+        {
+          "x": 100,
+          "y": 942,
+          "text": "The notification output is currently an unsent file. No Microsoft Graph delivery adapter is implemented."
+        }
+      ],
+      "legend": "Blue: implemented locally / Amber dashed: prepared, not verified live / Gray dashed: proposed adapter",
+      "mermaid": "flowchart TB\n  subgraph adapters[\"Franark adapters\"]\n    sign_in[\"Sign-in adapter\"]\n    repository[\"Record repository\"]\n    model_adapter[\"Model adapter\"]\n    notification_draft[\"Notification draft\"]\n  end\n  subgraph sfc_services[\"SFC account connections\"]\n    entra[\"Microsoft Entra\"]\n    azure_sql[(\"Azure SQL\")]\n    openai[\"OpenAI API\"]\n    microsoft_graph[\"Microsoft Graph\"]\n  end\n  sign_in -.->|\"verify identity\"| entra\n  repository -.->|\"persist records\"| azure_sql\n  model_adapter -.->|\"bounded requests\"| openai\n  notification_draft -.->|\"future delivery\"| microsoft_graph\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class repository,model_adapter,notification_draft pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  class sign_in,entra,azure_sql,openai prepared;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  class microsoft_graph proposed;\n"
+    },
+    {
+      "id": "destinations",
+      "number": 6,
+      "title": "Business destinations",
+      "notation": "Optional integration map",
+      "caption": "Separate adapters preserve choices without treating every provider as a committed feature.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "file_adapter",
+          "label": "File adapter",
+          "x": 80,
+          "y": 320,
+          "w": 220,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "sharepoint",
+          "label": "SharePoint",
+          "x": 390,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "blob",
+          "label": "Azure Blob Storage",
+          "x": 390,
+          "y": 400,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "signature_adapter",
+          "label": "Signing adapter",
+          "x": 800,
+          "y": 320,
+          "w": 220,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "docusign",
+          "label": "DocuSign",
+          "x": 1110,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "adobe",
+          "label": "Adobe Acrobat Sign",
+          "x": 1110,
+          "y": 400,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "vendor_adapter",
+          "label": "Transfer adapter",
+          "x": 80,
+          "y": 720,
+          "w": 220,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "ecirts",
+          "label": "eCIRTS",
+          "x": 390,
+          "y": 650,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "wellsky",
+          "label": "WellSky",
+          "x": 390,
+          "y": 800,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "reporting_views",
+          "label": "Reporting views",
+          "x": 800,
+          "y": 720,
+          "w": 220,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "powerbi",
+          "label": "Power BI",
+          "x": 1110,
+          "y": 650,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "fabric",
+          "label": "Microsoft Fabric",
+          "x": 1110,
+          "y": 800,
+          "w": 250,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [
+        {
+          "from": "file_adapter",
+          "to": "sharepoint",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              345,
+              355
+            ],
+            [
+              345,
+              305
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "file_adapter",
+          "to": "blob",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              345,
+              355
+            ],
+            [
+              345,
+              435
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "signature_adapter",
+          "to": "docusign",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              1060,
+              355
+            ],
+            [
+              1060,
+              305
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "signature_adapter",
+          "to": "adobe",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              1060,
+              355
+            ],
+            [
+              1060,
+              435
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "vendor_adapter",
+          "to": "ecirts",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              345,
+              755
+            ],
+            [
+              345,
+              685
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "vendor_adapter",
+          "to": "wellsky",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              345,
+              755
+            ],
+            [
+              345,
+              835
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "reporting_views",
+          "to": "powerbi",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              1060,
+              755
+            ],
+            [
+              1060,
+              685
+            ]
+          ],
+          "dashed": true
+        },
+        {
+          "from": "reporting_views",
+          "to": "fabric",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              1060,
+              755
+            ],
+            [
+              1060,
+              835
+            ]
+          ],
+          "dashed": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "files",
+          "label": "File storage choices",
+          "x": 42,
+          "y": 190,
+          "w": 640,
+          "h": 330,
+          "dashed": true
+        },
+        {
+          "id": "signing",
+          "label": "Remote signing choices",
+          "x": 758,
+          "y": 190,
+          "w": 640,
+          "h": 330,
+          "dashed": true
+        },
+        {
+          "id": "vendor_transfers",
+          "label": "Vendor transfers",
+          "x": 42,
+          "y": 570,
+          "w": 640,
+          "h": 350,
+          "dashed": true
+        },
+        {
+          "id": "analytics",
+          "label": "Analytics choices",
+          "x": 758,
+          "y": 570,
+          "w": 640,
+          "h": 350,
+          "dashed": true
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 960,
+          "text": "Provider selection, licensing, field mappings and acceptance receipts remain open decisions.",
+          "size": 18
+        }
+      ],
+      "legend": "Dashed throughout: options and unconnected destinations / Generic export previews are not vendor-ready transfers",
+      "mermaid": "flowchart TB\n  subgraph files[\"File storage choices\"]\n    file_adapter[\"File adapter\"]\n    sharepoint[\"SharePoint\"]\n    blob[\"Azure Blob Storage\"]\n  end\n  subgraph signing[\"Remote signing choices\"]\n    signature_adapter[\"Signing adapter\"]\n    docusign[\"DocuSign\"]\n    adobe[\"Adobe Acrobat Sign\"]\n  end\n  subgraph vendor_transfers[\"Vendor transfers\"]\n    vendor_adapter[\"Transfer adapter\"]\n    ecirts[\"eCIRTS\"]\n    wellsky[\"WellSky\"]\n  end\n  subgraph analytics[\"Analytics choices\"]\n    reporting_views[\"Reporting views\"]\n    powerbi[\"Power BI\"]\n    fabric[\"Microsoft Fabric\"]\n  end\n  file_adapter -.-> sharepoint\n  file_adapter -.-> blob\n  signature_adapter -.-> docusign\n  signature_adapter -.-> adobe\n  vendor_adapter -.-> ecirts\n  vendor_adapter -.-> wellsky\n  reporting_views -.-> powerbi\n  reporting_views -.-> fabric\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  class file_adapter,sharepoint,blob,signature_adapter,docusign,adobe,vendor_adapter,ecirts,wellsky,reporting_views,powerbi,fabric proposed;\n"
+    },
+    {
+      "id": "stack",
+      "number": 7,
+      "title": "Software stack",
+      "notation": "Layered architecture",
+      "caption": "Languages, frameworks, access controls, services and databases have separate nodes.",
+      "width": 1440,
+      "height": 1300,
+      "nodes": [
+        {
+          "id": "browser",
+          "label": "Browser",
+          "x": 80,
+          "y": 240,
+          "w": 260,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "javascript",
+          "label": "JavaScript",
+          "x": 390,
+          "y": 240,
+          "w": 260,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "html",
+          "label": "HTML",
+          "x": 80,
+          "y": 350,
+          "w": 260,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "css",
+          "label": "CSS",
+          "x": 390,
+          "y": 350,
+          "w": 260,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "fastapi",
+          "label": "FastAPI",
+          "x": 930,
+          "y": 240,
+          "w": 330,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "python",
+          "label": "Python",
+          "x": 930,
+          "y": 350,
+          "w": 330,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "jwt_verification",
+          "label": "JWT verification",
+          "x": 100,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "app_roles",
+          "label": "App role gate",
+          "x": 560,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "record_scope",
+          "label": "Record scope",
+          "x": 1020,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "assessment_service",
+          "label": "Assessment service",
+          "x": 100,
+          "y": 770,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "workflow_engine",
+          "label": "Workflow engine",
+          "x": 560,
+          "y": 770,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "capability_registry",
+          "label": "Capability registry",
+          "x": 1020,
+          "y": 770,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "sqlalchemy",
+          "label": "SQLAlchemy",
+          "x": 100,
+          "y": 1010,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "sqlite",
+          "label": "SQLite",
+          "x": 560,
+          "y": 1010,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "database"
+        },
+        {
+          "id": "azure_sql",
+          "label": "Azure SQL",
+          "x": 1020,
+          "y": 1010,
+          "w": 320,
+          "h": 70,
+          "status": "prepared",
+          "shape": "database"
+        }
+      ],
+      "edges": [
+        {
+          "from": "browser",
+          "to": "javascript",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "javascript",
+          "to": "fastapi",
+          "start": "E",
+          "end": "W",
+          "label": "HTTP",
+          "label_at": [
+            755,
+            263
+          ]
+        },
+        {
+          "from": "fastapi",
+          "to": "jwt_verification",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              1300,
+              310
+            ],
+            [
+              1365,
+              310
+            ],
+            [
+              1365,
+              470
+            ],
+            [
+              260,
+              470
+            ]
+          ]
+        },
+        {
+          "from": "jwt_verification",
+          "to": "app_roles",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "app_roles",
+          "to": "record_scope",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "record_scope",
+          "to": "assessment_service",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              1180,
+              690
+            ],
+            [
+              260,
+              690
+            ]
+          ]
+        },
+        {
+          "from": "record_scope",
+          "to": "workflow_engine",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              1180,
+              690
+            ],
+            [
+              720,
+              690
+            ]
+          ]
+        },
+        {
+          "from": "record_scope",
+          "to": "capability_registry",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "assessment_service",
+          "to": "sqlalchemy",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "workflow_engine",
+          "to": "sqlalchemy",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              720,
+              930
+            ],
+            [
+              260,
+              930
+            ]
+          ]
+        },
+        {
+          "from": "capability_registry",
+          "to": "sqlalchemy",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              1180,
+              930
+            ],
+            [
+              260,
+              930
+            ]
+          ]
+        },
+        {
+          "from": "sqlalchemy",
+          "to": "sqlite",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "sqlalchemy",
+          "to": "azure_sql",
+          "start": "S",
+          "end": "S",
+          "via": [
+            [
+              260,
+              1115
+            ],
+            [
+              1180,
+              1115
+            ]
+          ],
+          "dashed": true
+        }
+      ],
+      "groups": [
+        {
+          "id": "browser_client",
+          "label": "Browser client",
+          "x": 42,
+          "y": 170,
+          "w": 650,
+          "h": 280
+        },
+        {
+          "id": "http_runtime",
+          "label": "HTTP runtime",
+          "x": 800,
+          "y": 170,
+          "w": 598,
+          "h": 280
+        },
+        {
+          "id": "authorization",
+          "label": "Access controls",
+          "x": 42,
+          "y": 490,
+          "w": 1356,
+          "h": 165
+        },
+        {
+          "id": "application",
+          "label": "Application layer",
+          "x": 42,
+          "y": 710,
+          "w": 1356,
+          "h": 165
+        },
+        {
+          "id": "persistence",
+          "label": "Persistence",
+          "x": 42,
+          "y": 950,
+          "w": 1356,
+          "h": 180
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 1190,
+          "text": "Python runs the application. HTML defines structure; CSS defines presentation. Local development uses loopback identity.",
+          "size": 18
+        }
+      ],
+      "legend": "Blue: pilot implementation / Green: existing process / Dashed: unverified connection or proposed option",
+      "mermaid": "flowchart TB\n  subgraph browser_client[\"Browser client\"]\n    browser[\"Browser\"]\n    javascript[\"JavaScript\"]\n    html[\"HTML\"]\n    css[\"CSS\"]\n  end\n  subgraph http_runtime[\"HTTP runtime\"]\n    fastapi[\"FastAPI\"]\n    python[\"Python\"]\n  end\n  subgraph authorization[\"Access controls\"]\n    jwt_verification[\"JWT verification\"]\n    app_roles[\"App role gate\"]\n    record_scope[\"Record scope\"]\n  end\n  subgraph application[\"Application layer\"]\n    assessment_service[\"Assessment service\"]\n    workflow_engine[\"Workflow engine\"]\n    capability_registry[\"Capability registry\"]\n  end\n  subgraph persistence[\"Persistence\"]\n    sqlalchemy[\"SQLAlchemy\"]\n    sqlite[(\"SQLite\")]\n    azure_sql[(\"Azure SQL\")]\n  end\n  browser --> javascript\n  javascript -->|\"HTTP\"| fastapi\n  fastapi --> jwt_verification\n  jwt_verification --> app_roles\n  app_roles --> record_scope\n  record_scope --> assessment_service\n  record_scope --> workflow_engine\n  record_scope --> capability_registry\n  assessment_service --> sqlalchemy\n  workflow_engine --> sqlalchemy\n  capability_registry --> sqlalchemy\n  sqlalchemy --> sqlite\n  sqlalchemy -.-> azure_sql\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class browser,javascript,html,css,fastapi,python,jwt_verification,app_roles,record_scope,assessment_service,workflow_engine,capability_registry,sqlalchemy,sqlite pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  class azure_sql prepared;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n"
+    },
+    {
+      "id": "workflow",
+      "number": 8,
+      "title": "Assessment responsibilities",
+      "notation": "Cross-functional flow",
+      "caption": "Staff enter data, the application derives results, and a reviewer controls release.",
+      "width": 1440,
+      "height": 1140,
+      "nodes": [
+        {
+          "id": "create_draft",
+          "label": "Create draft",
+          "x": 100,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "edit_answers",
+          "label": "Edit answers",
+          "x": 430,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "acknowledge",
+          "label": "Acknowledge",
+          "x": 760,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "submit",
+          "label": "Submit",
+          "x": 1090,
+          "y": 270,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "save_draft",
+          "label": "Save draft",
+          "x": 430,
+          "y": 500,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "database"
+        },
+        {
+          "id": "freeze_revision",
+          "label": "Freeze revision",
+          "x": 1090,
+          "y": 500,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "validate",
+          "label": "Validate answers",
+          "x": 760,
+          "y": 500,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "case_note",
+          "label": "Generate note draft",
+          "x": 760,
+          "y": 620,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "document"
+        },
+        {
+          "id": "review",
+          "label": "Review evidence",
+          "x": 430,
+          "y": 810,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "request_changes",
+          "label": "Request changes",
+          "x": 100,
+          "y": 810,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "approve",
+          "label": "Approve",
+          "x": 760,
+          "y": 810,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "export",
+          "label": "Export record",
+          "x": 1090,
+          "y": 810,
+          "w": 250,
+          "h": 70,
+          "status": "pilot",
+          "shape": "document"
+        }
+      ],
+      "edges": [
+        {
+          "from": "create_draft",
+          "to": "edit_answers",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "edit_answers",
+          "to": "save_draft",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "save_draft",
+          "to": "acknowledge",
+          "start": "E",
+          "end": "W",
+          "via": [
+            [
+              720,
+              535
+            ],
+            [
+              720,
+              305
+            ]
+          ]
+        },
+        {
+          "from": "acknowledge",
+          "to": "submit",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "submit",
+          "to": "freeze_revision",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "freeze_revision",
+          "to": "validate",
+          "start": "W",
+          "end": "E"
+        },
+        {
+          "from": "validate",
+          "to": "case_note",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "case_note",
+          "to": "review",
+          "start": "S",
+          "end": "N",
+          "via": [
+            [
+              885,
+              740
+            ],
+            [
+              555,
+              740
+            ]
+          ]
+        },
+        {
+          "from": "review",
+          "to": "approve",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "approve",
+          "to": "export",
+          "start": "E",
+          "end": "W"
+        },
+        {
+          "from": "review",
+          "to": "request_changes",
+          "start": "W",
+          "end": "E"
+        },
+        {
+          "from": "request_changes",
+          "to": "edit_answers",
+          "start": "W",
+          "end": "N",
+          "via": [
+            [
+              25,
+              845
+            ],
+            [
+              25,
+              240
+            ],
+            [
+              555,
+              240
+            ]
+          ],
+          "label": "new correction draft",
+          "label_at": [
+            80,
+            430
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "staff",
+          "label": "Employee",
+          "x": 42,
+          "y": 190,
+          "w": 1356,
+          "h": 200
+        },
+        {
+          "id": "app",
+          "label": "Application",
+          "x": 42,
+          "y": 440,
+          "w": 1356,
+          "h": 285
+        },
+        {
+          "id": "human_reviewer",
+          "label": "Assigned reviewer",
+          "x": 42,
+          "y": 750,
+          "w": 1356,
+          "h": 200
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 1010,
+          "text": "Approval is blocked by validation errors. AI may suggest findings; it cannot approve.\nChanges create a linked draft with a new acknowledgement. The submitted revision remains fixed."
+        }
+      ],
+      "legend": "Solid: implemented synthetic workflow / Arrow: responsibility handoff / Release requires authorized human review",
+      "mermaid": "flowchart TB\n  subgraph staff[\"Employee\"]\n    create_draft[\"Create draft\"]\n    edit_answers[\"Edit answers\"]\n    acknowledge[\"Acknowledge\"]\n    submit[\"Submit\"]\n  end\n  subgraph app[\"Application\"]\n    save_draft[(\"Save draft\")]\n    freeze_revision[\"Freeze revision\"]\n    validate[\"Validate answers\"]\n    case_note[\"Generate note draft\"]\n  end\n  subgraph human_reviewer[\"Assigned reviewer\"]\n    review[\"Review evidence\"]\n    request_changes[\"Request changes\"]\n    approve[\"Approve\"]\n    export[\"Export record\"]\n  end\n  create_draft --> edit_answers\n  edit_answers --> save_draft\n  save_draft --> acknowledge\n  acknowledge --> submit\n  submit --> freeze_revision\n  freeze_revision --> validate\n  validate --> case_note\n  case_note --> review\n  review --> approve\n  approve --> export\n  review --> request_changes\n  request_changes -->|\"new correction draft\"| edit_answers\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class create_draft,edit_answers,acknowledge,submit,save_draft,freeze_revision,validate,case_note,review,request_changes,approve,export pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n"
+    },
+    {
+      "id": "changes",
+      "number": 9,
+      "title": "Revision and change control",
+      "notation": "State model",
+      "caption": "Changing a submitted assessment creates another record, rather than rewriting its history.",
+      "width": 1440,
+      "height": 1140,
+      "nodes": [
+        {
+          "id": "draft",
+          "label": "Draft",
+          "x": 100,
+          "y": 260,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "needs_review",
+          "label": "Needs review",
+          "x": 590,
+          "y": 260,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "ready",
+          "label": "Ready for review",
+          "x": 590,
+          "y": 450,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "approved",
+          "label": "Approved",
+          "x": 1080,
+          "y": 450,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "changes_requested",
+          "label": "Changes requested",
+          "x": 590,
+          "y": 640,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "correction",
+          "label": "New correction draft",
+          "x": 100,
+          "y": 640,
+          "w": 300,
+          "h": 80,
+          "status": "pilot",
+          "shape": "state"
+        },
+        {
+          "id": "form_designer",
+          "label": "Form designer",
+          "x": 100,
+          "y": 850,
+          "w": 300,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "definition_approval",
+          "label": "Definition approval",
+          "x": 590,
+          "y": 850,
+          "w": 300,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        },
+        {
+          "id": "version_migration",
+          "label": "Version migration",
+          "x": 1080,
+          "y": 850,
+          "w": 300,
+          "h": 70,
+          "status": "proposed",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [
+        {
+          "from": "draft",
+          "to": "needs_review",
+          "start": "E",
+          "end": "W",
+          "label": "submit: findings",
+          "label_at": [
+            420,
+            280
+          ]
+        },
+        {
+          "from": "draft",
+          "to": "ready",
+          "start": "S",
+          "end": "W",
+          "via": [
+            [
+              250,
+              490
+            ]
+          ],
+          "label": "submit: clean",
+          "label_at": [
+            270,
+            473
+          ]
+        },
+        {
+          "from": "needs_review",
+          "to": "approved",
+          "start": "E",
+          "end": "N",
+          "via": [
+            [
+              975,
+              300
+            ],
+            [
+              1230,
+              300
+            ]
+          ],
+          "label": "no errors; approval",
+          "label_at": [
+            1010,
+            282
+          ]
+        },
+        {
+          "from": "ready",
+          "to": "approved",
+          "start": "E",
+          "end": "W",
+          "label": "human approval",
+          "label_at": [
+            905,
+            470
+          ]
+        },
+        {
+          "from": "needs_review",
+          "to": "changes_requested",
+          "start": "E",
+          "end": "E",
+          "via": [
+            [
+              990,
+              300
+            ],
+            [
+              990,
+              680
+            ]
+          ],
+          "label": "request changes",
+          "label_at": [
+            995,
+            615
+          ]
+        },
+        {
+          "from": "ready",
+          "to": "changes_requested",
+          "start": "S",
+          "end": "N"
+        },
+        {
+          "from": "changes_requested",
+          "to": "correction",
+          "start": "W",
+          "end": "E"
+        },
+        {
+          "from": "approved",
+          "to": "correction",
+          "start": "S",
+          "end": "S",
+          "via": [
+            [
+              1230,
+              770
+            ],
+            [
+              250,
+              770
+            ]
+          ],
+          "label": "correction",
+          "label_at": [
+            1070,
+            755
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "record_states",
+          "label": "Assessment record states",
+          "x": 42,
+          "y": 190,
+          "w": 1356,
+          "h": 600
+        },
+        {
+          "id": "definition_tools",
+          "label": "Future definition tooling",
+          "x": 42,
+          "y": 810,
+          "w": 1356,
+          "h": 140,
+          "dashed": true
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 1000,
+          "text": "A correction resets acknowledgement. A newer approved correction blocks older exports.\nDefinitions already have version keys; an administrative form-design and publishing workflow is not implemented."
+        }
+      ],
+      "legend": "Blue: pilot implementation / Green: existing process / Dashed: unverified connection or proposed option",
+      "mermaid": "stateDiagram-v2\n state \"Draft\" as draft\n state \"Needs review\" as needs_review\n state \"Ready for review\" as ready\n state \"Approved\" as approved\n state \"Changes requested\" as changes_requested\n state \"New correction draft\" as correction\n [*] --> draft\n draft --> needs_review: Submit with findings\n draft --> ready: Submit without findings\n needs_review --> approved: Human approval; no errors\n ready --> approved: Human approval\n needs_review --> changes_requested: Request changes\n ready --> changes_requested: Request changes\n changes_requested --> correction: Create separate record\n approved --> correction: Create separate record\n note right of correction\n   Old submission stays fixed.\n   New acknowledgement required.\n end note\n\n state \"Future definition tooling\" as Future {\n   state \"Form designer\" as form_designer\n   state \"Definition approval\" as definition_approval\n   state \"Version migration\" as version_migration\n }\n classDef proposed fill:#ffffff,stroke:#788493,stroke-dasharray:6 4,color:#111\n class Future,form_designer,definition_approval,version_migration proposed\n"
+    },
+    {
+      "id": "capabilities",
+      "number": 10,
+      "title": "Callable information tools",
+      "notation": "Capability map",
+      "caption": "Each tool has a specific input, transformation and limit; these are independent operations.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "select",
+          "label": "Select relevant evidence",
+          "x": 100,
+          "y": 270,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "fields",
+          "label": "Keep requested fields",
+          "x": 100,
+          "y": 500,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "extract",
+          "label": "Extract source sentences",
+          "x": 100,
+          "y": 730,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "delta",
+          "label": "Create exact change patch",
+          "x": 820,
+          "y": 270,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "pack",
+          "label": "Compress stored text",
+          "x": 820,
+          "y": 500,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "timeline",
+          "label": "Coalesce unchanged events",
+          "x": 820,
+          "y": 730,
+          "w": 500,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        }
+      ],
+      "edges": [],
+      "groups": [
+        {
+          "id": "task_context",
+          "label": "Task context tools",
+          "x": 42,
+          "y": 190,
+          "w": 640,
+          "h": 700
+        },
+        {
+          "id": "storage_history",
+          "label": "Storage and history tools",
+          "x": 758,
+          "y": 190,
+          "w": 640,
+          "h": 700
+        }
+      ],
+      "notes": [
+        {
+          "x": 100,
+          "y": 380,
+          "text": "memory.select / BM25 ranking\nSelect whole evidence documents within a byte budget."
+        },
+        {
+          "x": 100,
+          "y": 610,
+          "text": "memory.project / JSON Pointer fields\nChoose named fields; protected fields stay included."
+        },
+        {
+          "x": 100,
+          "y": 840,
+          "text": "memory.summarize / BM25 + MMR\nCopy source sentences with exact offsets."
+        },
+        {
+          "x": 820,
+          "y": 380,
+          "text": "memory.delta / JSON Patch subset\nEncode changes against a verified base hash."
+        },
+        {
+          "x": 820,
+          "y": 610,
+          "text": "memory.pack / DEFLATE\nStore reversible compressed data; not prompt compression."
+        },
+        {
+          "x": 820,
+          "y": 840,
+          "text": "memory.timeline / Run coalescing\nRetain changes, critical events and heartbeat records."
+        },
+        {
+          "x": 80,
+          "y": 950,
+          "text": "Tools run only when granted and invoked. Measurements report time, bytes and provenance, not semantic correctness."
+        }
+      ],
+      "legend": "All six are callable in the pilot / Labels name their operations / Method IDs are shown outside the boxes",
+      "mermaid": "flowchart TB\n  subgraph task_context[\"Task context tools\"]\n    select[\"Select relevant evidence\"]\n    fields[\"Keep requested fields\"]\n    extract[\"Extract source sentences\"]\n  end\n  subgraph storage_history[\"Storage and history tools\"]\n    delta[\"Create exact change patch\"]\n    pack[\"Compress stored text\"]\n    timeline[\"Coalesce unchanged events\"]\n  end\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class select,fields,extract,delta,pack,timeline pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n"
+    },
+    {
+      "id": "sources",
+      "number": 11,
+      "title": "Information sources and derived records",
+      "notation": "Provenance map",
+      "caption": "Structured records, deterministic derivations and future documents are distinct sources.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "definition",
+          "label": "Form definition",
+          "x": 1020,
+          "y": 270,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "answers",
+          "label": "Assessment answers",
+          "x": 560,
+          "y": 270,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "prior",
+          "label": "Prior approved record",
+          "x": 100,
+          "y": 270,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "note_draft",
+          "label": "Case-note draft",
+          "x": 1020,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "document"
+        },
+        {
+          "id": "finding",
+          "label": "Validation finding",
+          "x": 100,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "payload_hash",
+          "label": "Payload hash",
+          "x": 560,
+          "y": 550,
+          "w": 320,
+          "h": 70,
+          "status": "pilot",
+          "shape": "rectangle"
+        },
+        {
+          "id": "scan_source",
+          "label": "Scanned document",
+          "x": 100,
+          "y": 810,
+          "w": 320,
+          "h": 70,
+          "status": "proposed",
+          "shape": "document"
+        },
+        {
+          "id": "guidance",
+          "label": "Approved guidance",
+          "x": 560,
+          "y": 810,
+          "w": 320,
+          "h": 70,
+          "status": "proposed",
+          "shape": "document"
+        },
+        {
+          "id": "faq",
+          "label": "FAQ article",
+          "x": 1020,
+          "y": 810,
+          "w": 320,
+          "h": 70,
+          "status": "proposed",
+          "shape": "document"
+        }
+      ],
+      "edges": [
+        {
+          "from": "definition",
+          "to": "note_draft"
+        },
+        {
+          "from": "prior",
+          "to": "finding"
+        },
+        {
+          "from": "answers",
+          "to": "finding"
+        },
+        {
+          "from": "answers",
+          "to": "payload_hash"
+        },
+        {
+          "from": "answers",
+          "to": "note_draft"
+        }
+      ],
+      "groups": [
+        {
+          "id": "source_records",
+          "label": "Structured sources",
+          "x": 42,
+          "y": 190,
+          "w": 1356,
+          "h": 200
+        },
+        {
+          "id": "derived_records",
+          "label": "Derived records",
+          "x": 42,
+          "y": 470,
+          "w": 1356,
+          "h": 190
+        },
+        {
+          "id": "future_sources",
+          "label": "Future source integrations",
+          "x": 42,
+          "y": 730,
+          "w": 1356,
+          "h": 190,
+          "dashed": true
+        }
+      ],
+      "notes": [
+        {
+          "x": 80,
+          "y": 960,
+          "text": "Findings link to exact source revisions. An agent knowledge hub and document ingestion are proposed, not connected."
+        }
+      ],
+      "legend": "Blue: current records or derived values / Dashed: future source integration / Arrow: derivation or comparison",
+      "mermaid": "flowchart TB\n  subgraph source_records[\"Structured sources\"]\n    definition[\"Form definition\"]\n    answers[\"Assessment answers\"]\n    prior[\"Prior approved record\"]\n  end\n  subgraph derived_records[\"Derived records\"]\n    note_draft[\"Case-note draft\"]\n    finding[\"Validation finding\"]\n    payload_hash[\"Payload hash\"]\n  end\n  subgraph future_sources[\"Future source integrations\"]\n    scan_source[\"Scanned document\"]\n    guidance[\"Approved guidance\"]\n    faq[\"FAQ article\"]\n  end\n  definition --> note_draft\n  prior --> finding\n  answers --> finding\n  answers --> payload_hash\n  answers --> note_draft\n  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;\n  class definition,answers,prior,note_draft,finding,payload_hash pilot;\n  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;\n  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;\n  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;\n  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;\n  class scan_source,guidance,faq proposed;\n"
+    },
+    {
+      "id": "records",
+      "number": 12,
+      "title": "Relational data model",
+      "notation": "Entity relationships",
+      "caption": "Each entity is an actual pilot table. Answers and signatures are fields, not separate tables.",
+      "width": 1440,
+      "height": 1060,
+      "nodes": [
+        {
+          "id": "form_definitions",
+          "label": "form_definitions\nPK form_key",
+          "x": 170,
+          "y": 270,
+          "w": 390,
+          "h": 120,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        },
+        {
+          "id": "submissions",
+          "label": "submissions\nPK id\nFK form_key\nFK supersedes_id",
+          "x": 170,
+          "y": 495,
+          "w": 390,
+          "h": 170,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        },
+        {
+          "id": "submission_events",
+          "label": "submission_events\nPK id\nFK submission_id",
+          "x": 170,
+          "y": 780,
+          "w": 390,
+          "h": 130,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        },
+        {
+          "id": "runs",
+          "label": "runs\nPK id",
+          "x": 890,
+          "y": 270,
+          "w": 390,
+          "h": 120,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        },
+        {
+          "id": "events",
+          "label": "events\nPK id\nFK run_id",
+          "x": 890,
+          "y": 500,
+          "w": 390,
+          "h": 130,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        },
+        {
+          "id": "measurements",
+          "label": "measurements\nPK id\nFK run_id (nullable)",
+          "x": 890,
+          "y": 780,
+          "w": 390,
+          "h": 130,
+          "status": "pilot",
+          "shape": "rectangle",
+          "font_size": 22
+        }
+      ],
+      "edges": [
+        {
+          "from": "form_definitions",
+          "to": "submissions",
+          "start": "S",
+          "end": "N",
+          "label": "one to many",
+          "label_at": [
+            385,
+            455
+          ]
+        },
+        {
+          "from": "submissions",
+          "to": "submission_events",
+          "start": "S",
+          "end": "N",
+          "label": "one to many",
+          "label_at": [
+            385,
+            728
+          ]
+        },
+        {
+          "from": "submissions",
+          "to": "submissions",
+          "start": "E",
+          "end": "E",
+          "via": [
+            [
+              640,
+              580
+            ],
+            [
+              640,
+              680
+            ],
+            [
+              610,
+              680
+            ],
+            [
+              610,
+              610
+            ]
+          ],
+          "label": "supersedes",
+          "label_at": [
+            490,
+            705
+          ]
+        },
+        {
+          "from": "runs",
+          "to": "events",
+          "start": "S",
+          "end": "N",
+          "label": "one to many",
+          "label_at": [
+            1100,
+            455
+          ]
+        },
+        {
+          "from": "runs",
+          "to": "measurements",
+          "start": "E",
+          "end": "E",
+          "via": [
+            [
+              1350,
+              330
+            ],
+            [
+              1350,
+              845
+            ]
+          ],
+          "label": "optional run",
+          "label_at": [
+            1120,
+            710
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "assessment_tables",
+          "label": "Assessment tables",
+          "x": 42,
+          "y": 190,
+          "w": 640,
+          "h": 760
+        },
+        {
+          "id": "agent_tables",
+          "label": "Agent and measurement tables",
+          "x": 758,
+          "y": 190,
+          "w": 640,
+          "h": 760
+        }
+      ],
+      "notes": [],
+      "legend": "PK: primary key / FK: foreign key / Mermaid source includes exact relationship cardinalities",
+      "mermaid": "erDiagram\n form_definitions ||--o{ submissions : defines\n submissions ||--o{ submission_events : records\n submissions |o--o{ submissions : supersedes\n runs ||--o{ events : records\n runs |o--o{ measurements : attributes\n form_definitions {\n   string form_key PK\n   text definition_json\n }\n submissions {\n   string id PK\n   string form_key FK\n   string supersedes_id FK\n   text answers_json\n   text signature_json\n   string payload_sha256\n }\n submission_events {\n   int id PK\n   string submission_id FK\n   string actor_subject\n }\n runs {\n   string id PK\n   string owner_subject\n }\n events {\n   int id PK\n   string run_id FK\n }\n measurements {\n   int id PK\n   string run_id FK\n }\n"
+    }
+  ]
+}

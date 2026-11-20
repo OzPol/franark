@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+<title id="title">Connectivity and paper</title><desc id="desc">Offline entry is a proposed route. Paper remains an explicit existing route.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52677a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1060" fill="white"/>
+<text x="42" y="38" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">03 / FRANARK / ALTERNATIVE PATHS</tspan>
+</text>
+<text x="42" y="88" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="bold" fill="#111111">
+<tspan x="42" dy="0">Connectivity and paper</tspan>
+</text>
+<text x="42" y="123" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Offline entry is a proposed route. Paper remains an explicit existing route.</tspan>
+</text>
+<rect x="42" y="190" width="1356" height="200" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Connected digital route</tspan>
+</text>
+<rect x="42" y="430" width="1356" height="200" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4" stroke-dasharray="8 6"/>
+<text x="62" y="462" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Proposed device route</tspan>
+</text>
+<rect x="42" y="670" width="1356" height="280" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="702" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Existing paper route</tspan>
+</text>
+<polyline points="370,295.0 600,295.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="230.0,330 230.0,500" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<polyline points="370,535.0 580,535.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<polyline points="860,535.0 1050,535.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<polyline points="1190.0,500 1190,390 940,390 940,295 880,295.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<polyline points="340,775.0 470,775.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720,775.0 850,775.0" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="975.0,810 975,820 1170,820 1170.0,830" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)" stroke-dasharray="8 6"/>
+<rect x="90" y="260" width="280" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="230.0" y="303.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="230.0" dy="0">Digital form</tspan>
+</text>
+<path d="M600,270 C600,257 880,257 880,270 L880,320 C880,333 600,333 600,320 Z" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<path d="M600,270 C600,280 880,280 880,270" fill="none" stroke="#326cb0" stroke-width="1.4"/>
+<text x="740.0" y="303.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="740.0" dy="0">Server draft</tspan>
+</text>
+<rect x="90" y="500" width="280" height="70" rx="8" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="230.0" y="543.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="230.0" dy="0">Offline draft</tspan>
+</text>
+<rect x="580" y="500" width="280" height="70" rx="8" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="720.0" y="543.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Synchronize</tspan>
+</text>
+<rect x="1050" y="500" width="280" height="70" rx="8" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="1190.0" y="543.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1190.0" dy="0">Resolve conflict</tspan>
+</text>
+<path d="M90,740 H340 V800 C252.5,782 177.5,818 90,800 Z" fill="#edf7e8" stroke="#587b42" stroke-width="1.8"/>
+<text x="215.0" y="783.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="215.0" dy="0">Paper form</tspan>
+</text>
+<rect x="470" y="740" width="250" height="70" rx="8" fill="#edf7e8" stroke="#587b42" stroke-width="1.8"/>
+<text x="595.0" y="783.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="595.0" dy="0">Scan</tspan>
+</text>
+<rect x="850" y="740" width="250" height="70" rx="8" fill="#edf7e8" stroke="#587b42" stroke-width="1.8"/>
+<text x="975.0" y="783.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="975.0" dy="0">SharePoint</tspan>
+</text>
+<rect x="1010" y="830" width="320" height="70" rx="8" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="1170.0" y="873.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1170.0" dy="0">Manual transcription</tspan>
+</text>
+<text x="90" y="930" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="18" font-weight="normal" fill="#354352">
+<tspan x="90" dy="0">Manual transcription into Franark is a proposed bridge. Scans are not structured assessment answers.</tspan>
+</text>
+<line x1="42" y1="982" x2="1398" y2="982" stroke="#d2d9e0"/>
+<text x="42" y="1012" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Blue: pilot implementation / Green: existing process / Dashed: unverified connection or proposed option</tspan>
+</text>
+<text x="42" y="1039" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">Offline browser storage, synchronization, conflict policy and device protection are not implemented</tspan>
+</text>
+</svg>

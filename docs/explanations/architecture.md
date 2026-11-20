@@ -6,7 +6,8 @@ general Worker produce work; the Reviewer checks it; the Communications Agent
 prepares the management-facing draft. These names are labels on reusable role
 configurations.
 
-![Franark system architecture](../_static/architecture.svg)
+The [focused system diagrams](system-diagrams.md) separate service structure,
+capture, software, workflow responsibilities, change control and data relationships.
 
 | Layer | Initial implementation |
 |---|---|

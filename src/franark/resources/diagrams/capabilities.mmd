@@ -1,0 +1,17 @@
+flowchart TB
+  subgraph task_context["Task context tools"]
+    select["Select relevant evidence"]
+    fields["Keep requested fields"]
+    extract["Extract source sentences"]
+  end
+  subgraph storage_history["Storage and history tools"]
+    delta["Create exact change patch"]
+    pack["Compress stored text"]
+    timeline["Coalesce unchanged events"]
+  end
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class select,fields,extract,delta,pack,timeline pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;

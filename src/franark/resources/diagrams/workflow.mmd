@@ -1,0 +1,37 @@
+flowchart TB
+  subgraph staff["Employee"]
+    create_draft["Create draft"]
+    edit_answers["Edit answers"]
+    acknowledge["Acknowledge"]
+    submit["Submit"]
+  end
+  subgraph app["Application"]
+    save_draft[("Save draft")]
+    freeze_revision["Freeze revision"]
+    validate["Validate answers"]
+    case_note["Generate note draft"]
+  end
+  subgraph human_reviewer["Assigned reviewer"]
+    review["Review evidence"]
+    request_changes["Request changes"]
+    approve["Approve"]
+    export["Export record"]
+  end
+  create_draft --> edit_answers
+  edit_answers --> save_draft
+  save_draft --> acknowledge
+  acknowledge --> submit
+  submit --> freeze_revision
+  freeze_revision --> validate
+  validate --> case_note
+  case_note --> review
+  review --> approve
+  approve --> export
+  review --> request_changes
+  request_changes -->|"new correction draft"| edit_answers
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class create_draft,edit_answers,acknowledge,submit,save_draft,freeze_revision,validate,case_note,review,request_changes,approve,export pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;

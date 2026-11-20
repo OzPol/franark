@@ -1,0 +1,86 @@
+[
+  {
+    "id": "services",
+    "number": 1,
+    "title": "Contracted Services",
+    "notation": "Service hierarchy",
+    "caption": "Service structure is distinct from the staff reporting chart."
+  },
+  {
+    "id": "capture",
+    "number": 2,
+    "title": "Capture options",
+    "notation": "Layered option map",
+    "caption": "Devices, input methods, client software and capture channels are separate concepts."
+  },
+  {
+    "id": "continuity",
+    "number": 3,
+    "title": "Connectivity and paper",
+    "notation": "Alternative paths",
+    "caption": "Offline entry is a proposed route. Paper remains an explicit existing route."
+  },
+  {
+    "id": "context",
+    "number": 4,
+    "title": "People and application surfaces",
+    "notation": "System context",
+    "caption": "Each surface has a distinct purpose. A knowledge hub remains a proposed surface."
+  },
+  {
+    "id": "integrations",
+    "number": 5,
+    "title": "Platform connections",
+    "notation": "Integration map",
+    "caption": "Adapter implementation and live account verification are different readiness states."
+  },
+  {
+    "id": "destinations",
+    "number": 6,
+    "title": "Business destinations",
+    "notation": "Optional integration map",
+    "caption": "Separate adapters preserve choices without treating every provider as a committed feature."
+  },
+  {
+    "id": "stack",
+    "number": 7,
+    "title": "Software stack",
+    "notation": "Layered architecture",
+    "caption": "Languages, frameworks, access controls, services and databases have separate nodes."
+  },
+  {
+    "id": "workflow",
+    "number": 8,
+    "title": "Assessment responsibilities",
+    "notation": "Cross-functional flow",
+    "caption": "Staff enter data, the application derives results, and a reviewer controls release."
+  },
+  {
+    "id": "changes",
+    "number": 9,
+    "title": "Revision and change control",
+    "notation": "State model",
+    "caption": "Changing a submitted assessment creates another record, rather than rewriting its history."
+  },
+  {
+    "id": "capabilities",
+    "number": 10,
+    "title": "Callable information tools",
+    "notation": "Capability map",
+    "caption": "Each tool has a specific input, transformation and limit; these are independent operations."
+  },
+  {
+    "id": "sources",
+    "number": 11,
+    "title": "Information sources and derived records",
+    "notation": "Provenance map",
+    "caption": "Structured records, deterministic derivations and future documents are distinct sources."
+  },
+  {
+    "id": "records",
+    "number": 12,
+    "title": "Relational data model",
+    "notation": "Entity relationships",
+    "caption": "Each entity is an actual pilot table. Answers and signatures are fields, not separate tables."
+  }
+]

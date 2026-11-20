@@ -1,0 +1,35 @@
+flowchart TB
+  subgraph files["File storage choices"]
+    file_adapter["File adapter"]
+    sharepoint["SharePoint"]
+    blob["Azure Blob Storage"]
+  end
+  subgraph signing["Remote signing choices"]
+    signature_adapter["Signing adapter"]
+    docusign["DocuSign"]
+    adobe["Adobe Acrobat Sign"]
+  end
+  subgraph vendor_transfers["Vendor transfers"]
+    vendor_adapter["Transfer adapter"]
+    ecirts["eCIRTS"]
+    wellsky["WellSky"]
+  end
+  subgraph analytics["Analytics choices"]
+    reporting_views["Reporting views"]
+    powerbi["Power BI"]
+    fabric["Microsoft Fabric"]
+  end
+  file_adapter -.-> sharepoint
+  file_adapter -.-> blob
+  signature_adapter -.-> docusign
+  signature_adapter -.-> adobe
+  vendor_adapter -.-> ecirts
+  vendor_adapter -.-> wellsky
+  reporting_views -.-> powerbi
+  reporting_views -.-> fabric
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  class file_adapter,sharepoint,blob,signature_adapter,docusign,adobe,vendor_adapter,ecirts,wellsky,reporting_views,powerbi,fabric proposed;

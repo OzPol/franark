@@ -40,7 +40,7 @@ model result when credentials are absent.
 
 ## Inspect the system
 
-- `/architecture`: four context, stack, workflow and record diagrams.
+- `/architecture`: focused diagrams with SVG, Mermaid and editable Excalidraw downloads.
 - `/lab`: six callable information methods with observed metrics and references.
 - **Connection readiness**: administrator-only configuration/backend report and
   collection checklist. No secrets are exposed by this endpoint.

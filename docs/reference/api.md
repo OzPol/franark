@@ -17,7 +17,9 @@ access or multiple users requires the corresponding authentication milestone.
 | `POST /api/capabilities/execute` | Run a validated information method and record telemetry. |
 | `GET /api/measurements` | Latest 100 content-free method/model usage records. |
 | `GET /portal` | Synthetic assessment pilot. |
-| `GET /architecture` | Context, software, workflow and record diagrams. |
+| `GET /architecture` | Selected system views with editable source downloads. |
+| `GET /assets/diagrams` | Published diagram manifest. |
+| `GET /assets/diagrams/{name}.{format}` | Allowlisted SVG, Excalidraw or Mermaid source; editor formats download as attachments. |
 | `GET /api/identity` | Verified caller identity and assigned app roles. |
 | `GET /api/setup` | Administrator-only connection readiness and collection checklist. |
 | `GET /api/portal/forms` | Frozen synthetic form definitions and versions. |

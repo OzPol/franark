@@ -1,0 +1,27 @@
+flowchart TB
+  contracted_services["Contracted Services"]
+  supportive_aging["Supportive Aging"]
+  nutrition["Nutrition"]
+  adc["ADC"]
+  case_management["Case Management"]
+  fah["FAH"]
+  crc["CRC"]
+  contracted_services --> supportive_aging
+  contracted_services --> nutrition
+  contracted_services --> adc
+  supportive_aging --> case_management
+  supportive_aging --> fah
+  adc --> crc
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  class contracted_services,supportive_aging,nutrition,adc,case_management,fah,crc existing;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  style contracted_services fill:#F4D06F,color:#111
+  style supportive_aging fill:#79AEE3,color:#111
+  style nutrition fill:#8FCB87,color:#111
+  style adc fill:#B39DDB,color:#111
+  style case_management fill:#C9DFF4,color:#111
+  style fah fill:#C9DFF4,color:#111
+  style crc fill:#DED4EF,color:#111
