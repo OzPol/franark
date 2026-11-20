@@ -24,6 +24,31 @@ jobs:
         run: python tools/render_roles.py --check
       - name: Build documentation
         run: python -m sphinx -W --keep-going -b html docs docs/_build/html
+      - name: Check browser script syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess, tempfile
+          for path in Path('src/franark/static').glob('*.html'):
+              for source in re.findall(r'<script>([\s\S]*?)</script>', path.read_text()):
+                  with tempfile.NamedTemporaryFile(suffix='.js') as file:
+                      file.write(source.encode()); file.flush()
+                      subprocess.run(['node', '--check', file.name], check=True)
+          PY
+      - name: Validate Azure deployment template
+        run: |
+          curl --fail --silent --show-error --location https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64 -o /tmp/bicep
+          chmod +x /tmp/bicep
+          /tmp/bicep build infra/sfc-pilot.bicep --outfile /tmp/sfc-pilot.json
+      - name: Check PowerShell launcher and deployment script
+        shell: pwsh
+        run: |
+          foreach ($path in @('Start-Franark.ps1', 'infra/Deploy-Sfc.ps1')) {
+            $tokens = $null
+            $parseErrors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD $path), [ref]$tokens, [ref]$parseErrors) | Out-Null
+            if ($parseErrors.Count) { throw ($parseErrors | Out-String) }
+          }
       - name: Save documentation artifact
         uses: actions/upload-artifact@v4
         with:
@@ -36,6 +61,13 @@ jobs:
           docker compose --profile docs up --build -d
       - name: Check the running installation
         run: python tools/smoke_http.py
+      - name: Build Azure runtime image and check SQL driver
+        run: |
+          docker build --target azure -t franark-azure-pilot .
+          docker run --rm --entrypoint python franark-azure-pilot -c "import pyodbc; assert 'ODBC Driver 18 for SQL Server' in pyodbc.drivers()"
+          docker run -d --name franark-azure-check -p 127.0.0.1:8767:8765 franark-azure-pilot
+          trap 'docker logs franark-azure-check; docker rm -f franark-azure-check' EXIT
+          python tools/smoke_http.py --url http://127.0.0.1:8767 --skip-docs
       - name: Container logs on failure
         if: failure()
         run: docker compose --profile docs logs --no-color

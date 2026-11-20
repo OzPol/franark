@@ -77,6 +77,10 @@ class Toolbox:
         self._allowed = allowed
         self._handlers = handlers
 
+    @property
+    def available_names(self) -> tuple[str, ...]:
+        return tuple(sorted(self._allowed & self._handlers.keys()))
+
     def call(self, name: str, **arguments: Any) -> Any:
         if name not in self._allowed or name not in self._handlers:
             raise ToolDenied(f"Tool {name!r} is not available to this agent.")

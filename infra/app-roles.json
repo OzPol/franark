@@ -1,0 +1,5 @@
+[
+  {"allowedMemberTypes":["User"],"description":"Use synthetic Franark pilot workflows and owned records.","displayName":"Franark Pilot","id":"d9419b12-d566-4e33-9d2b-e6d56078e101","isEnabled":true,"value":"Franark.Pilot"},
+  {"allowedMemberTypes":["User"],"description":"Review explicitly assigned synthetic submissions.","displayName":"Franark Reviewer","id":"d9419b12-d566-4e33-9d2b-e6d56078e102","isEnabled":true,"value":"Franark.Reviewer"},
+  {"allowedMemberTypes":["User"],"description":"Administer the synthetic pilot and inspect connection readiness.","displayName":"Franark Administrator","id":"d9419b12-d566-4e33-9d2b-e6d56078e103","isEnabled":true,"value":"Franark.Admin"}
+]

@@ -27,7 +27,7 @@ is unavailable on the machine, use the Python guide in `docs/how-to`.
 ## 2. Clone the repository
 
 ```powershell
-git clone https://github.com/OzPol/franark.git
+git clone --branch capability-foundation https://github.com/OzPol/franark.git
 ```
 
 Enter the repository:
@@ -44,10 +44,10 @@ Copy-Item .env.example .env
 
 The default runtime is `demo`. Leave it that way for the first run.
 
-## 3. Start the workbench and documentation
+## 3. Start the pilot and documentation
 
 ```powershell
-docker compose --profile docs up --build -d
+./Start-Franark.ps1
 ```
 
 Check the services:
@@ -58,12 +58,21 @@ docker compose ps
 
 Open:
 
-- Workbench: <http://127.0.0.1:8765>
+- Assessment pilot: <http://127.0.0.1:8765/portal>
+- System diagrams: <http://127.0.0.1:8765/architecture>
+- Agent workbench: <http://127.0.0.1:8765>
 - Sphinx documentation: <http://127.0.0.1:8766>
+- Capabilities lab: <http://127.0.0.1:8765/lab>
 
 The initial image builds download packages. Later starts reuse the built images.
 
-## 4. Complete the first workflow
+## 4. Test the assessment or agent workflow
+
+The assessment test sequence is in `PILOT_CHECKLIST.md`. It covers a synthetic
+submission, human review, PDF output and a changed-birthdate correction. SFC is the
+hosting target; this local launcher is a loopback-only development test.
+
+For the original agent workflow:
 
 1. Select **IT and vendor assessment**.
 2. Click **Use sample**.
@@ -99,8 +108,10 @@ docker compose up -d --force-recreate app
 
 Run the synthetic sample first, then a small authorized work source. The UI shows
 the runtime and notes that model runs use billable API calls. The IT workflow
-uses at most ten calls; other included workflows use fewer. A call limit and an
-output-token cap are available in `.env`. They are not a hard dollar budget.
+has ten agent steps; information tools can add follow-up model requests. The
+configured cap stops requests when reached, so inspect usage before increasing it.
+Call, tool-round and output-token limits are available in `.env`. They are not a
+hard dollar budget.
 
 ChatGPT Plus and the API have separate usage accounting. Current subscription
 API-credit benefits apply to eligible Pro and Business subscriptions; check the

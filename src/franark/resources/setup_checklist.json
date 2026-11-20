@@ -1,0 +1,8 @@
+[
+  {"area":"SFC tenant and access","items":["SFC tenant ID and Azure subscription/resource group","App registration client ID, HTTPS callback URL and app assignments","Franark.Pilot, Franark.Reviewer and Franark.Admin role assignments","Key Vault reference for the sign-in client secret and approved administrator"]},
+  {"area":"Forms and notes","items":["Exact first assessment and version, including blank form","De-identified completed example and required case-note template","Required fields, scoring, answer codes, signature and correction rules","Online/offline requirements and test iPad/Surface devices"]},
+  {"area":"Data and files","items":["Approved Azure SQL server/database and managed-identity grants","Storage/SharePoint destination, record links, access and retention rules","Client identifiers and duplicate/uncertain-match process","Backup and restoration expectations"]},
+  {"area":"Model API","items":["Approved SFC OpenAI API project, model and provider/data settings","Server-side API key or Key Vault reference","Synthetic live API test and usage limits"]},
+  {"area":"Email and signatures","items":["Approved service mailbox, recipients and notification tone","Microsoft Graph draft/send scopes and mailbox restriction","Accepted in-person signature method and any Adobe/DocuSign/Microsoft agreement","Signature provider API entitlement and audit requirements"]},
+  {"area":"Destination systems","items":["Current eCIRTS/WellSky/SAMS import/API specifications and permitted access","Accepted sample, code lists, field mappings and identifiers","Test environment, receipt/error format and duplicate prevention","Named pilot reviewer and release/acceptance criteria"]}
+]

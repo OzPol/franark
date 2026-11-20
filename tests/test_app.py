@@ -77,6 +77,26 @@ class ApplicationTests(unittest.TestCase):
         self.assertEqual(len(config.json()["roles"]), 10)
         self.assertEqual(self.client.get("/").status_code, 200)
 
+    def test_capability_api_and_history_store_telemetry_without_source_content(self):
+        config = self.client.get("/api/capabilities").json()
+        self.assertEqual(len(config["methods"]), 6)
+        self.assertEqual(self.client.get("/lab").status_code, 200)
+        payload = {"name": "memory.pack", "arguments": {"text": "synthetic-private-document"}}
+        response = self.client.post("/api/capabilities/execute", json=payload)
+        self.assertEqual(response.status_code, 200)
+        history = self.client.get("/api/measurements")
+        self.assertEqual(len(history.json()), 1)
+        self.assertNotIn("synthetic-private-document", history.text)
+        self.assertNotIn("data_base64", history.text)
+        self.assertNotIn("never-expose-this", history.text)
+
+    def test_capability_api_rejects_invalid_inputs_and_cross_origin_calls(self):
+        path = "/api/capabilities/execute"
+        payload = {"name": "memory.pack", "arguments": {"text": "synthetic"}}
+        self.assertEqual(self.client.post(path, json={"name": "mail.send", "arguments": {}}).status_code, 422)
+        self.assertEqual(self.client.post(path, json=payload, headers={"origin": "https://other.example"}).status_code, 403)
+        self.assertEqual(self.client.post(path, json={"name": "memory.pack", "arguments": {"text": "x" * 1001001}}).status_code, 413)
+
     def test_other_origin_cannot_submit_work(self):
         response = self.client.post("/api/runs", json=self.payload(),
                                     headers={"Origin": "https://unrelated.example"})

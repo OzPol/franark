@@ -2,7 +2,7 @@
 
 Create a project API key in the selected work API organization. Keep the key in
 local `.env`. Select an available model that supports the Responses API and
-JSON-schema structured outputs.
+JSON-schema structured outputs and function calling.
 
 ```text
 FRANARK_RUNTIME=openai
@@ -23,6 +23,9 @@ yourself.
 Run the synthetic example first. The API adapter requests structured results,
 sets an output-token limit, uses a 60-second request timeout, and disables
 automatic SDK retries. The per-run call cap is separate from a dollar budget.
+Information tools can add follow-up requests; each is counted against the actual
+API request cap. `FRANARK_MAX_TOOL_ROUNDS` bounds rounds per agent. Start with
+the synthetic example and inspect usage before changing these limits.
 
 Notes and prior step outputs are sent to the configured provider in model mode.
 The API key remains server-side. `store=False` disables Responses application
@@ -33,5 +36,6 @@ References:
 
 - [OpenAI quickstart](https://developers.openai.com/api/docs/quickstart)
 - [Structured outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
+- [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
 - [API subscription-credit eligibility](https://developers.openai.com/api/docs/guides/chatgpt-api-credits)
 - [API data controls](https://developers.openai.com/api/docs/guides/your-data)

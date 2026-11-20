@@ -7,4 +7,5 @@ roles
 configuration
 api
 core
+information-capabilities
 ```

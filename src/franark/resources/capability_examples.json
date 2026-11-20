@@ -1,0 +1,20 @@
+{
+  "memory.select": {"query": "vendor export commitment deadline", "budget_bytes": 1000, "documents": [
+    {"source_id": "synthetic-contract", "version": "1", "text": "The vendor committed to delivering the service export by 30 November. The scope excludes historical attachments.", "pinned": true},
+    {"source_id": "synthetic-update", "version": "2", "text": "The export deadline changed to 7 December. The vendor has not confirmed the attachment scope."},
+    {"source_id": "synthetic-menu", "version": "1", "text": "The cafeteria menu changes every Monday."}
+  ]},
+  "memory.delta": {"source_id": "synthetic-client-001", "base_version": "1", "current_version": "2", "before": {"client_id": "SYN-001", "birthdate": "1940-02-10", "program": "nutrition", "meal_count": 2}, "after": {"client_id": "SYN-001", "birthdate": "1940-02-11", "program": "nutrition", "meal_count": 3}},
+  "memory.pack": {"text": "SYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\nSYN-001 | reviewed | no change\n", "level": 6},
+  "memory.project": {"source_id": "synthetic-assessment", "version": "1", "record": {"client_id": "SYN-001", "birthdate": "1940-02-10", "contact": {"phone": "synthetic-placeholder"}, "assessment": {"meal_support": "requested", "transportation": "not assessed"}}, "fields": ["/assessment/meal_support", "/assessment/transportation"], "protected_fields": ["/client_id", "/birthdate"]},
+  "memory.summarize": {"query": "vendor export deadline attachments", "budget_bytes": 1800, "max_sentences": 4, "relevance_weight": 0.7, "documents": [
+    {"source_id": "synthetic-vendor-thread", "version": "2", "text": "The vendor promised the export by 30 November. The deadline was subsequently moved to 7 December. Historical attachments are excluded from the current scope. The vendor promised the export by 30 November. A new proposal includes attachments, but it has not been approved."}
+  ]},
+  "memory.timeline": {"source_id": "synthetic-export-project", "heartbeat_seconds": 86400, "snapshots": [
+    {"event_id": "e1", "timestamp": "2026-11-01T09:00:00Z", "state": {"status": "requested", "deadline": "2026-11-30"}},
+    {"event_id": "e2", "timestamp": "2026-11-01T10:00:00Z", "state": {"status": "requested", "deadline": "2026-11-30"}},
+    {"event_id": "e3", "timestamp": "2026-11-01T11:00:00Z", "state": {"status": "requested", "deadline": "2026-12-07"}},
+    {"event_id": "e4", "timestamp": "2026-11-01T12:00:00Z", "state": {"status": "requested", "deadline": "2026-12-07"}, "critical": true},
+    {"event_id": "e5", "timestamp": "2026-11-01T13:00:00Z", "state": {"status": "requested", "deadline": "2026-12-07"}}
+  ]}
+}
