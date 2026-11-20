@@ -107,11 +107,21 @@ def create_app(settings=None, authenticator=None, model_client=None):
     def architecture_page():
         return files("franark").joinpath("static/architecture.html").read_text()
 
-    @app.get("/assets/diagrams/{name}.svg")
-    def architecture_asset(name: str):
-        if name not in {"context", "stack", "workflow", "records"}:
+    diagram_index = json.loads(files("franark").joinpath("resources/diagrams/index.json").read_text())
+    diagram_names = frozenset(view["id"] for view in diagram_index)
+
+    @app.get("/assets/diagrams")
+    def architecture_index():
+        return diagram_index
+
+    @app.get("/assets/diagrams/{name}.{format}")
+    def architecture_asset(name: str, format: str):
+        media = {"svg": "image/svg+xml", "excalidraw": "application/json", "mmd": "text/plain"}
+        if name not in diagram_names or format not in media:
             raise HTTPException(404, "Diagram not found.")
-        return Response(files("franark").joinpath("resources/diagrams", name + ".svg").read_bytes(), media_type="image/svg+xml")
+        headers = {} if format == "svg" else {"Content-Disposition": f'attachment; filename="franark-{name}.{format}"'}
+        return Response(files("franark").joinpath("resources/diagrams", name + "." + format).read_bytes(),
+                        media_type=media[format], headers=headers)
 
     @app.get("/api/identity")
     def current_identity(request: Request):

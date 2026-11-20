@@ -1,0 +1,35 @@
+block-beta
+ columns 2
+ block:devices
+   columns 2
+   devices_title["Device options"]:2
+   computer["Computer"] tablet["Tablet"]
+   phone["Phone"] space
+ end
+ block:inputs
+   columns 2
+   inputs_title["Input methods"]:2
+   keyboard["Keyboard"] touch["Touch"]
+   pen["Pen"] space
+ end
+ block:clients
+   columns 2
+   clients_title["Client software"]:2
+   browser["Browser"] native_app["Native app"]
+ end
+ block:channels
+   columns 2
+   channels_title["Capture channels"]:2
+   digital_form["Digital form"] paper_form["Paper form"]
+ end
+ classDef proposed fill:#ffffff,stroke:#788493,stroke-dasharray:6 4,color:#111;
+ classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+ classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+ classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+ class native_app proposed;
+ class keyboard,touch,pen,browser,digital_form pilot;
+ class computer,tablet,phone logical;
+ class paper_form existing;
+
+ classDef heading fill:transparent,stroke:transparent,color:#111;
+ class devices_title,inputs_title,clients_title,channels_title heading;

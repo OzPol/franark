@@ -51,3 +51,14 @@ remain unverified.
 I will link later entries to commits, datasets, configurations and observed
 outcomes, including negative and inconclusive results. `PILOT_CHECKLIST.md` holds
 the current collection and test sequence.
+
+
+## 2026-11-20 - Focused architecture views
+
+I separated the conceptual model into service structure, capture dimensions,
+connectivity, application surfaces, platform connections, business destinations,
+software layers, responsibilities, revision states, callable methods, source
+provenance and relational entities. Each concept retains a stable ID.
+Mermaid notation and native Excalidraw files preserve both semantic relationships
+and direct editing. Paper remains explicit; offline synchronization and future
+provider choices are dashed options rather than implemented features.

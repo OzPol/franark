@@ -1,0 +1,28 @@
+flowchart TB
+  subgraph source_records["Structured sources"]
+    definition["Form definition"]
+    answers["Assessment answers"]
+    prior["Prior approved record"]
+  end
+  subgraph derived_records["Derived records"]
+    note_draft["Case-note draft"]
+    finding["Validation finding"]
+    payload_hash["Payload hash"]
+  end
+  subgraph future_sources["Future source integrations"]
+    scan_source["Scanned document"]
+    guidance["Approved guidance"]
+    faq["FAQ article"]
+  end
+  definition --> note_draft
+  prior --> finding
+  answers --> finding
+  answers --> payload_hash
+  answers --> note_draft
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class definition,answers,prior,note_draft,finding,payload_hash pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  class scan_source,guidance,faq proposed;

@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased - DIAGRAMS-002
+
+- Replaced composite diagram boxes with twelve focused views and separate concept nodes.
+- Separated devices, input methods, client software, paper capture and proposed offline synchronization.
+- Added a service hierarchy, responsibility swimlanes, revision states, source provenance and an actual-table ER view.
+- Added native Excalidraw and Mermaid downloads, stable concept IDs and a vector PDF/source-bundle export.
+- Added a diagram selector, validated asset downloads and generated-source checks.
+- Preserved the supplied Contracted Services relationships without the provisional annotation.
+
 ## Unreleased - PILOT-001
 
 - Added an executable synthetic assessment/review/correction flow, signature acknowledgement, case-note templates and approved generic exports.

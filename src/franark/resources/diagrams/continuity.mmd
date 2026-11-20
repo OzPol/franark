@@ -1,0 +1,32 @@
+flowchart TB
+  subgraph connected["Connected digital route"]
+    digital_entry["Digital form"]
+    server_draft[("Server draft")]
+  end
+  subgraph offline["Proposed device route"]
+    device_draft["Offline draft"]
+    synchronize["Synchronize"]
+    conflict_review["Resolve conflict"]
+  end
+  subgraph paper_route["Existing paper route"]
+    paper["Paper form"]
+    scan["Scan"]
+    sharepoint["SharePoint"]
+    transcribe["Manual transcription"]
+  end
+  digital_entry --> server_draft
+  digital_entry -.-> device_draft
+  device_draft -.-> synchronize
+  synchronize -.-> conflict_review
+  conflict_review -.-> server_draft
+  paper --> scan
+  scan --> sharepoint
+  sharepoint -.-> transcribe
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class digital_entry,server_draft pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  class paper,scan,sharepoint existing;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  class device_draft,synchronize,conflict_review,transcribe proposed;
