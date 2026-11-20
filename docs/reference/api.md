@@ -12,6 +12,10 @@ access or multiple users requires the corresponding authentication milestone.
 | `GET /api/runs` | Latest 100 run summaries. |
 | `GET /api/runs/{id}` | Source notes and ordered assignment/result events. |
 | `GET /api/runs/{id}/report` | Download a Markdown report. |
+| `GET /lab` | Local capabilities lab. |
+| `GET /api/capabilities` | Method schemas, examples and research references. |
+| `POST /api/capabilities/execute` | Run a validated information method and record telemetry. |
+| `GET /api/measurements` | Latest 100 content-free method/model usage records. |
 
 Submission fields are `title`, `notes`, `domain`, and optional `request_key`.
 Domains are `general`, `it`, `wellsky`, and `software`. Notes are limited to

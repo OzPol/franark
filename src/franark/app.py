@@ -13,6 +13,7 @@ from starlette.middleware.trustedhost import TrustedHostMiddleware
 from .pipeline import SAMPLE_NOTES, markdown_report, role_catalog, run_saved
 from .settings import Settings
 from .store import RequestConflict, Store
+from .capabilities import MAX_INPUT_BYTES, catalog, execute
 
 
 class RunRequest(BaseModel):
@@ -20,6 +21,11 @@ class RunRequest(BaseModel):
     notes: str = Field(min_length=10, max_length=20000)
     domain: Literal["general", "it", "wellsky", "software"] = "general"
     request_key: str = Field(default_factory=lambda: uuid4().hex, min_length=8, max_length=100)
+
+
+class CapabilityRequest(BaseModel):
+    name: str = Field(min_length=1, max_length=100)
+    arguments: dict
 
 
 def create_app(settings=None):
@@ -44,11 +50,41 @@ def create_app(settings=None):
             allowed = {str(request.base_url).rstrip("/")}
             if origin not in allowed:
                 return JSONResponse({"detail": "Use the Franark tab for this action."}, status_code=403)
+        if request.method == "POST" and request.url.path == "/api/capabilities/execute":
+            if len(await request.body()) > MAX_INPUT_BYTES + 1000:
+                return JSONResponse({"detail": "Capability request is too large."}, status_code=413)
         return await call_next(request)
 
     @app.get("/", response_class=HTMLResponse)
     def index():
         return files("franark").joinpath("static/index.html").read_text()
+
+    @app.get("/lab", response_class=HTMLResponse)
+    def lab():
+        return files("franark").joinpath("static/lab.html").read_text()
+
+    @app.get("/api/capabilities")
+    def capabilities():
+        resources = files("franark").joinpath("resources")
+        import json
+        return {"methods": catalog(),
+                "examples": json.loads(resources.joinpath("capability_examples.json").read_text()),
+                "references": json.loads(resources.joinpath("method_references.json").read_text()),
+                "access": "Local development only; no Microsoft sign-in or business connectors configured."}
+
+    @app.post("/api/capabilities/execute")
+    def execute_capability(payload: CapabilityRequest, request: Request):
+        try:
+            measured = execute(payload.name, payload.arguments)
+        except (ValueError, TypeError, RecursionError):
+            raise HTTPException(422, "Inputs rejected. Check required fields, source IDs, limits, and pinned-evidence budget.") from None
+        request.app.state.store.record_measurement(
+            "capability", {key: value for key, value in measured.items() if key != "result"})
+        return measured
+
+    @app.get("/api/measurements")
+    def measurements(request: Request):
+        return request.app.state.store.measurements()
 
     @app.get("/health")
     def health():

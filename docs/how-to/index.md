@@ -5,6 +5,7 @@
 
 run-with-python
 connect-model
+use-capabilities
 add-agent
 write-documentation
 import-backlog

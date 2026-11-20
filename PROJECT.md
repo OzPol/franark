@@ -58,3 +58,16 @@ The machine-readable backlog includes a user story and acceptance criteria for e
 ## First release scope
 
 The starter provides local runs, a role catalog, persistent event history, a model adapter, reports, documentation, and tests. Source connectors, operational task records, deterministic priority policy evaluation, external actions, and unattended scheduling follow the milestones above.
+
+## CAP-001 — Information mechanism foundation
+
+Requested 2026-11-19. Add six callable, measured baseline information methods,
+source papers/standards, research history and a local lab. Acceptance criteria:
+validated input contracts; effective tool permissions; actual timing/byte/hash
+records; exact reconstruction where claimed; bounded model function calling;
+preserved original agent contracts; tests and strict documentation build.
+
+The SFC portal requirements and options are recorded in
+`docs/explanations/sfc-portal-plan.md`. Form selection, offline behavior, licenses,
+production identity and supported import interfaces remain open decisions. This
+scope does not mark integration milestones or existing GitHub issues complete.

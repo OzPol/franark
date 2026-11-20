@@ -12,5 +12,5 @@ html_theme = "alabaster"
 html_title = "Franark documentation"
 html_static_path = ["_static"]
 html_theme_options = {"description": "Local agent workflows with traceable results"}
-myst_enable_extensions = ["colon_fence"]
+myst_enable_extensions = ["colon_fence", "dollarmath"]
 nitpicky = False

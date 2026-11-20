@@ -38,6 +38,13 @@ class Store:
                     agent_id TEXT NOT NULL, result_json TEXT,
                     created_at TEXT NOT NULL
                 );
+                CREATE TABLE IF NOT EXISTS measurements (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    run_id TEXT REFERENCES runs(id),
+                    kind TEXT NOT NULL,
+                    metadata_json TEXT NOT NULL,
+                    created_at TEXT NOT NULL
+                );
             """)
 
     @contextmanager
@@ -102,3 +109,15 @@ class Store:
         with self.connection() as db:
             db.execute("UPDATE runs SET status = 'interrupted', updated_at = ?, message = ? WHERE status IN ('running', 'queued')",
                        (now(), "Application restarted during this run. Review recorded steps before starting again."))
+
+    def record_measurement(self, kind, metadata, run_id=None):
+        """Persist telemetry only, never method input/output documents or API keys."""
+        with self.connection() as db:
+            db.execute("INSERT INTO measurements (run_id, kind, metadata_json, created_at) VALUES (?, ?, ?, ?)",
+                       (run_id, kind, json.dumps(metadata), now()))
+
+    def measurements(self, limit=100):
+        with self.connection() as db:
+            return [{"id": row["id"], "run_id": row["run_id"], "kind": row["kind"],
+                     "created_at": row["created_at"], "metadata": json.loads(row["metadata_json"])}
+                    for row in db.execute("SELECT * FROM measurements ORDER BY id DESC LIMIT ?", (limit,))]

@@ -11,6 +11,7 @@ class Settings:
     data_dir: Path = Path("data")
     max_calls: int = 10
     max_output_tokens: int = 1400
+    max_tool_rounds: int = 2
 
     def __post_init__(self):
         if self.runtime not in {"demo", "openai"}:
@@ -19,6 +20,8 @@ class Settings:
             raise ValueError("FRANARK_MAX_CALLS must be between 1 and 20.")
         if not 256 <= self.max_output_tokens <= 8000:
             raise ValueError("FRANARK_MAX_OUTPUT_TOKENS must be between 256 and 8000.")
+        if not 0 <= self.max_tool_rounds <= 4:
+            raise ValueError("FRANARK_MAX_TOOL_ROUNDS must be between 0 and 4.")
 
     @classmethod
     def from_env(cls):
@@ -29,4 +32,5 @@ class Settings:
             data_dir=Path(os.getenv("FRANARK_DATA_DIR", "data")),
             max_calls=int(os.getenv("FRANARK_MAX_CALLS", "10")),
             max_output_tokens=int(os.getenv("FRANARK_MAX_OUTPUT_TOKENS", "1400")),
+            max_tool_rounds=int(os.getenv("FRANARK_MAX_TOOL_ROUNDS", "2")),
         )

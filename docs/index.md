@@ -16,6 +16,9 @@ how-to/index
 reference/index
 explanations/architecture
 explanations/user-stories
+explanations/sfc-portal-plan
+explanations/sfc-user-stories
+research/index
 decisions/index
 articles/index
 blog/index

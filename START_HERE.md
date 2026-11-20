@@ -60,6 +60,7 @@ Open:
 
 - Workbench: <http://127.0.0.1:8765>
 - Sphinx documentation: <http://127.0.0.1:8766>
+- Capabilities lab: <http://127.0.0.1:8765/lab>
 
 The initial image builds download packages. Later starts reuse the built images.
 
@@ -99,8 +100,10 @@ docker compose up -d --force-recreate app
 
 Run the synthetic sample first, then a small authorized work source. The UI shows
 the runtime and notes that model runs use billable API calls. The IT workflow
-uses at most ten calls; other included workflows use fewer. A call limit and an
-output-token cap are available in `.env`. They are not a hard dollar budget.
+has ten agent steps; information tools can add follow-up model requests. The
+configured cap stops requests when reached, so inspect usage before increasing it.
+Call, tool-round and output-token limits are available in `.env`. They are not a
+hard dollar budget.
 
 ChatGPT Plus and the API have separate usage accounting. Current subscription
 API-credit benefits apply to eligible Pro and Business subscriptions; check the

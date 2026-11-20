@@ -23,6 +23,20 @@ Open the [workbench](http://127.0.0.1:8765) and
 [documentation](http://127.0.0.1:8766). Select **Use sample**, then **Run workflow**.
 Demo mode needs no API key.
 
+## Information capabilities and research record
+
+Open [Capabilities lab](http://127.0.0.1:8765/lab) to run six real, measured
+information methods against editable synthetic examples. Methods include BM25
+selection, versioned JSON differences, lossless DEFLATE encoding, field projection,
+MMR sentence extraction and event-boundary timelines. They are callable through
+the agent Toolbox and the OpenAI function-call adapter when configured.
+
+The [method record](docs/research/methods.md) includes equations, source papers and
+standards, adaptation choices and limitations. The [research ledger](docs/research/idea-log.md)
+tracks the history; the [SFC portal plan](docs/explanations/sfc-portal-plan.md)
+compares architecture, forms, signatures, identity, storage and export options.
+Those portal integrations are proposed, not connected or deployed by this change.
+
 For Linux/macOS, the copy command is `cp .env.example .env`.
 
 ## Included in v0.1
