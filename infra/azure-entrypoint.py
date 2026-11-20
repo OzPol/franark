@@ -6,6 +6,7 @@ import pwd
 directory = Path(os.environ.get("FRANARK_DATA_DIR", "/home/franark-data")).resolve()
 if not directory.is_relative_to(Path("/home")):
     raise RuntimeError("Azure application data must be stored beneath /home.")
+os.environ["FRANARK_DATA_DIR"] = str(directory)
 account = pwd.getpwnam("franark")
 directory.mkdir(parents=True, exist_ok=True)
 os.chown(directory, account.pw_uid, account.pw_gid)
