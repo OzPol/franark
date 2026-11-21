@@ -1,0 +1,46 @@
+flowchart TB
+  subgraph browser_client["Browser client"]
+    browser["Browser"]
+    javascript["JavaScript"]
+    html["HTML"]
+    css["CSS"]
+  end
+  subgraph http_runtime["HTTP runtime"]
+    fastapi["FastAPI"]
+    python["Python"]
+  end
+  subgraph authorization["Access controls"]
+    jwt_verification["JWT verification"]
+    app_roles["App role gate"]
+    record_scope["Record scope"]
+  end
+  subgraph application["Application layer"]
+    assessment_service["Assessment service"]
+    workflow_engine["Workflow engine"]
+    capability_registry["Capability registry"]
+  end
+  subgraph persistence["Persistence"]
+    sqlalchemy["SQLAlchemy"]
+    sqlite[("SQLite")]
+    azure_sql[("Azure SQL")]
+  end
+  browser --> javascript
+  javascript -->|"HTTP"| fastapi
+  fastapi --> jwt_verification
+  jwt_verification --> app_roles
+  app_roles --> record_scope
+  record_scope --> assessment_service
+  record_scope --> workflow_engine
+  record_scope --> capability_registry
+  assessment_service --> sqlalchemy
+  workflow_engine --> sqlalchemy
+  capability_registry --> sqlalchemy
+  sqlalchemy --> sqlite
+  sqlalchemy -.-> azure_sql
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class browser,javascript,html,css,fastapi,python,jwt_verification,app_roles,record_scope,assessment_service,workflow_engine,capability_registry,sqlalchemy,sqlite pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  class azure_sql prepared;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;

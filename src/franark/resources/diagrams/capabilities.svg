@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+<title id="title">Callable information tools</title><desc id="desc">Each tool has a specific input, transformation and limit; these are independent operations.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52677a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1060" fill="white"/>
+<text x="42" y="38" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">10 / FRANARK / CAPABILITY MAP</tspan>
+</text>
+<text x="42" y="88" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="bold" fill="#111111">
+<tspan x="42" dy="0">Callable information tools</tspan>
+</text>
+<text x="42" y="123" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Each tool has a specific input, transformation and limit; these are independent operations.</tspan>
+</text>
+<rect x="42" y="190" width="640" height="700" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Task context tools</tspan>
+</text>
+<rect x="758" y="190" width="640" height="700" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="778" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="778" dy="0">Storage and history tools</tspan>
+</text>
+<rect x="100" y="270" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="350.0" y="313.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="350.0" dy="0">Select relevant evidence</tspan>
+</text>
+<rect x="100" y="500" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="350.0" y="543.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="350.0" dy="0">Keep requested fields</tspan>
+</text>
+<rect x="100" y="730" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="350.0" y="773.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="350.0" dy="0">Extract source sentences</tspan>
+</text>
+<rect x="820" y="270" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1070.0" y="313.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1070.0" dy="0">Create exact change patch</tspan>
+</text>
+<rect x="820" y="500" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1070.0" y="543.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1070.0" dy="0">Compress stored text</tspan>
+</text>
+<rect x="820" y="730" width="500" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1070.0" y="773.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1070.0" dy="0">Coalesce unchanged events</tspan>
+</text>
+<text x="100" y="380" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="100" dy="0">memory.select / BM25 ranking</tspan>
+<tspan x="100" dy="23.75">Select whole evidence documents within a byte budget.</tspan>
+</text>
+<text x="100" y="610" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="100" dy="0">memory.project / JSON Pointer fields</tspan>
+<tspan x="100" dy="23.75">Choose named fields; protected fields stay included.</tspan>
+</text>
+<text x="100" y="840" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="100" dy="0">memory.summarize / BM25 + MMR</tspan>
+<tspan x="100" dy="23.75">Copy source sentences with exact offsets.</tspan>
+</text>
+<text x="820" y="380" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="820" dy="0">memory.delta / JSON Patch subset</tspan>
+<tspan x="820" dy="23.75">Encode changes against a verified base hash.</tspan>
+</text>
+<text x="820" y="610" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="820" dy="0">memory.pack / DEFLATE</tspan>
+<tspan x="820" dy="23.75">Store reversible compressed data; not prompt compression.</tspan>
+</text>
+<text x="820" y="840" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="820" dy="0">memory.timeline / Run coalescing</tspan>
+<tspan x="820" dy="23.75">Retain changes, critical events and heartbeat records.</tspan>
+</text>
+<text x="80" y="950" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="80" dy="0">Tools run only when granted and invoked. Measurements report time, bytes and provenance, not semantic correctness.</tspan>
+</text>
+<line x1="42" y1="982" x2="1398" y2="982" stroke="#d2d9e0"/>
+<text x="42" y="1012" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">All six are callable in the pilot / Labels name their operations / Method IDs are shown outside the boxes</tspan>
+</text>
+<text x="42" y="1039" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">SFC tenant target / Synthetic pilot / External connections remain unverified</tspan>
+</text>
+</svg>

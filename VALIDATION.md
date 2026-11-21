@@ -1,5 +1,20 @@
 # Validation record
 
+## DIAGRAMS-002 - 2026-11-20
+
+| Check | Result |
+|---|---|
+| Unit/application suite | 69 tests pass, including the diagram manifest, every download format and rejection of unlisted filenames/formats. |
+| Generated assets | Twelve views match the maintained model; native SVG/XML and Excalidraw JSON files are generated deterministically. |
+| Mermaid | All twelve sources parse in Mermaid 11 using flow, block, state and ER notation. |
+| Editor interoperability | The Excalidraw restore API loads every native scene with its element count and bound arrow endpoints preserved. |
+| Documentation | Strict Sphinx and role-reference checks pass; browser scripts pass Node syntax checks. |
+| Visual review | The final twelve-page vector PDF is rendered and inspected for layout, legibility and connections. |
+
+These checks do not validate physical device input, offline synchronization or
+external account connections. The change adds diagram views and source downloads,
+not those proposed operational features.
+
 ## PILOT-001 - 2026-11-20
 
 Synthetic inputs, generated test RSA keys and fake provider clients. No account

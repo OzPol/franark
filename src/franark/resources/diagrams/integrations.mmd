@@ -1,0 +1,25 @@
+flowchart TB
+  subgraph adapters["Franark adapters"]
+    sign_in["Sign-in adapter"]
+    repository["Record repository"]
+    model_adapter["Model adapter"]
+    notification_draft["Notification draft"]
+  end
+  subgraph sfc_services["SFC account connections"]
+    entra["Microsoft Entra"]
+    azure_sql[("Azure SQL")]
+    openai["OpenAI API"]
+    microsoft_graph["Microsoft Graph"]
+  end
+  sign_in -.->|"verify identity"| entra
+  repository -.->|"persist records"| azure_sql
+  model_adapter -.->|"bounded requests"| openai
+  notification_draft -.->|"future delivery"| microsoft_graph
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class repository,model_adapter,notification_draft pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  class sign_in,entra,azure_sql,openai prepared;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  class microsoft_graph proposed;

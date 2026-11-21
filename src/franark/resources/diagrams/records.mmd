@@ -1,0 +1,35 @@
+erDiagram
+ form_definitions ||--o{ submissions : defines
+ submissions ||--o{ submission_events : records
+ submissions |o--o{ submissions : supersedes
+ runs ||--o{ events : records
+ runs |o--o{ measurements : attributes
+ form_definitions {
+   string form_key PK
+   text definition_json
+ }
+ submissions {
+   string id PK
+   string form_key FK
+   string supersedes_id FK
+   text answers_json
+   text signature_json
+   string payload_sha256
+ }
+ submission_events {
+   int id PK
+   string submission_id FK
+   string actor_subject
+ }
+ runs {
+   string id PK
+   string owner_subject
+ }
+ events {
+   int id PK
+   string run_id FK
+ }
+ measurements {
+   int id PK
+   string run_id FK
+ }

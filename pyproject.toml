@@ -22,4 +22,4 @@ franark = "franark.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-franark = ["resources/*.json", "resources/diagrams/*.svg", "static/*.html"]
+franark = ["resources/*.json", "resources/diagrams/*.svg", "resources/diagrams/*.json", "resources/diagrams/*.mmd", "resources/diagrams/*.excalidraw", "static/*.html"]

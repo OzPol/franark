@@ -1,0 +1,24 @@
+flowchart TB
+  subgraph people["People"]
+    employee["Employee"]
+    reviewer["Assigned reviewer"]
+    research_operator["Research operator"]
+  end
+  subgraph franark["Franark boundary"]
+    portal["Assessment portal"]
+    workbench["Agent workbench"]
+    lab["Capabilities lab"]
+    knowledge_hub["Knowledge hub"]
+  end
+  employee --> portal
+  employee --> workbench
+  reviewer --> portal
+  research_operator --> lab
+  classDef pilot fill:#e7f1ff,stroke:#326cb0,color:#111;
+  class portal,workbench,lab pilot;
+  classDef existing fill:#edf7e8,stroke:#587b42,color:#111;
+  classDef logical fill:#f2f4f7,stroke:#687787,color:#111;
+  class employee,reviewer,research_operator logical;
+  classDef prepared fill:#fff4d7,stroke:#986b21,color:#111,stroke-dasharray:6 4;
+  classDef proposed fill:#ffffff,stroke:#788493,color:#111,stroke-dasharray:6 4;
+  class knowledge_hub proposed;

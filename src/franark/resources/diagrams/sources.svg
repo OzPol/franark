@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+<title id="title">Information sources and derived records</title><desc id="desc">Structured records, deterministic derivations and future documents are distinct sources.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52677a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1060" fill="white"/>
+<text x="42" y="38" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">11 / FRANARK / PROVENANCE MAP</tspan>
+</text>
+<text x="42" y="88" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="bold" fill="#111111">
+<tspan x="42" dy="0">Information sources and derived records</tspan>
+</text>
+<text x="42" y="123" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Structured records, deterministic derivations and future documents are distinct sources.</tspan>
+</text>
+<rect x="42" y="190" width="1356" height="200" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Structured sources</tspan>
+</text>
+<rect x="42" y="470" width="1356" height="190" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="502" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Derived records</tspan>
+</text>
+<rect x="42" y="730" width="1356" height="190" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4" stroke-dasharray="8 6"/>
+<text x="62" y="762" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Future source integrations</tspan>
+</text>
+<polyline points="1180.0,340 1180.0,550" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="260.0,340 260.0,550" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720.0,340 260.0,550" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720.0,340 720.0,550" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<polyline points="720.0,340 1180.0,550" fill="none" stroke="#52677a" stroke-width="1.8" stroke-linejoin="round" marker-end="url(#arrow)"/>
+<rect x="1020" y="270" width="320" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1180.0" y="313.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1180.0" dy="0">Form definition</tspan>
+</text>
+<rect x="560" y="270" width="320" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="720.0" y="313.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Assessment answers</tspan>
+</text>
+<rect x="100" y="270" width="320" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="260.0" y="313.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="260.0" dy="0">Prior approved record</tspan>
+</text>
+<path d="M1020,550 H1340 V610 C1228.0,592 1132.0,628 1020,610 Z" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1180.0" y="593.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1180.0" dy="0">Case-note draft</tspan>
+</text>
+<rect x="100" y="550" width="320" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="260.0" y="593.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="260.0" dy="0">Validation finding</tspan>
+</text>
+<rect x="560" y="550" width="320" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="720.0" y="593.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Payload hash</tspan>
+</text>
+<path d="M100,810 H420 V870 C308.0,852 212.0,888 100,870 Z" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="260.0" y="853.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="260.0" dy="0">Scanned document</tspan>
+</text>
+<path d="M560,810 H880 V870 C768.0,852 672.0,888 560,870 Z" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="720.0" y="853.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="720.0" dy="0">Approved guidance</tspan>
+</text>
+<path d="M1020,810 H1340 V870 C1228.0,852 1132.0,888 1020,870 Z" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="1180.0" y="853.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1180.0" dy="0">FAQ article</tspan>
+</text>
+<text x="80" y="960" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="80" dy="0">Findings link to exact source revisions. An agent knowledge hub and document ingestion are proposed, not connected.</tspan>
+</text>
+<line x1="42" y1="982" x2="1398" y2="982" stroke="#d2d9e0"/>
+<text x="42" y="1012" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Blue: current records or derived values / Dashed: future source integration / Arrow: derivation or comparison</tspan>
+</text>
+<text x="42" y="1039" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">SFC tenant target / Synthetic pilot / External connections remain unverified</tspan>
+</text>
+</svg>

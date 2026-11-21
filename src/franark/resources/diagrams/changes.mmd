@@ -1,0 +1,28 @@
+stateDiagram-v2
+ state "Draft" as draft
+ state "Needs review" as needs_review
+ state "Ready for review" as ready
+ state "Approved" as approved
+ state "Changes requested" as changes_requested
+ state "New correction draft" as correction
+ [*] --> draft
+ draft --> needs_review: Submit with findings
+ draft --> ready: Submit without findings
+ needs_review --> approved: Human approval; no errors
+ ready --> approved: Human approval
+ needs_review --> changes_requested: Request changes
+ ready --> changes_requested: Request changes
+ changes_requested --> correction: Create separate record
+ approved --> correction: Create separate record
+ note right of correction
+   Old submission stays fixed.
+   New acknowledgement required.
+ end note
+
+ state "Future definition tooling" as Future {
+   state "Form designer" as form_designer
+   state "Definition approval" as definition_approval
+   state "Version migration" as version_migration
+ }
+ classDef proposed fill:#ffffff,stroke:#788493,stroke-dasharray:6 4,color:#111
+ class Future,form_designer,definition_approval,version_migration proposed

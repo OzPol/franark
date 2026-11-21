@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+<title id="title">Capture options</title><desc id="desc">Devices, input methods, client software and capture channels are separate concepts.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#52677a" stroke-width="1.5"/></marker></defs>
+<rect width="1440" height="1060" fill="white"/>
+<text x="42" y="38" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">02 / FRANARK / LAYERED OPTION MAP</tspan>
+</text>
+<text x="42" y="88" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="36" font-weight="bold" fill="#111111">
+<tspan x="42" dy="0">Capture options</tspan>
+</text>
+<text x="42" y="123" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="20" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Devices, input methods, client software and capture channels are separate concepts.</tspan>
+</text>
+<rect x="42" y="190" width="640" height="320" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Device options</tspan>
+</text>
+<rect x="758" y="190" width="640" height="320" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="778" y="222" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="778" dy="0">Input methods</tspan>
+</text>
+<rect x="42" y="550" width="640" height="300" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="62" y="582" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="62" dy="0">Client software</tspan>
+</text>
+<rect x="758" y="550" width="640" height="300" rx="10" fill="#f8fafc" stroke="#cbd5df" stroke-width="1.4"/>
+<text x="778" y="582" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="bold" fill="#111111">
+<tspan x="778" dy="0">Capture channels</tspan>
+</text>
+<rect x="80" y="280" width="245" height="70" rx="8" fill="#f2f4f7" stroke="#687787" stroke-width="1.8"/>
+<text x="202.5" y="323.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="202.5" dy="0">Computer</tspan>
+</text>
+<rect x="360" y="280" width="245" height="70" rx="8" fill="#f2f4f7" stroke="#687787" stroke-width="1.8"/>
+<text x="482.5" y="323.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="482.5" dy="0">Tablet</tspan>
+</text>
+<rect x="80" y="400" width="245" height="70" rx="8" fill="#f2f4f7" stroke="#687787" stroke-width="1.8"/>
+<text x="202.5" y="443.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="202.5" dy="0">Phone</tspan>
+</text>
+<rect x="800" y="280" width="245" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="922.5" y="323.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="922.5" dy="0">Keyboard</tspan>
+</text>
+<rect x="1080" y="280" width="245" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="1202.5" y="323.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1202.5" dy="0">Touch</tspan>
+</text>
+<rect x="800" y="400" width="245" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="922.5" y="443.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="922.5" dy="0">Pen</tspan>
+</text>
+<rect x="80" y="650" width="245" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="202.5" y="693.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="202.5" dy="0">Browser</tspan>
+</text>
+<rect x="360" y="650" width="245" height="70" rx="8" fill="#ffffff" stroke="#788493" stroke-width="1.8" stroke-dasharray="8 6"/>
+<text x="482.5" y="693.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="482.5" dy="0">Native app</tspan>
+</text>
+<rect x="800" y="650" width="245" height="70" rx="8" fill="#e7f1ff" stroke="#326cb0" stroke-width="1.8"/>
+<text x="922.5" y="693.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="922.5" dy="0">Digital form</tspan>
+</text>
+<path d="M1080,650 H1325 V710 C1239.25,692 1165.75,728 1080,710 Z" fill="#edf7e8" stroke="#587b42" stroke-width="1.8"/>
+<text x="1202.5" y="693.05" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="normal" fill="#111111">
+<tspan x="1202.5" dy="0">Paper form</tspan>
+</text>
+<text x="80" y="780" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="80" dy="0">Browser is the current client.</tspan>
+<tspan x="80" dy="23.75">A native app is an independent future option.</tspan>
+</text>
+<text x="80" y="920" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="19" font-weight="normal" fill="#354352">
+<tspan x="80" dy="0">Device and input choices can be combined. Physical tablet, phone and pen testing remains pending.</tspan>
+</text>
+<line x1="42" y1="982" x2="1398" y2="982" stroke="#d2d9e0"/>
+<text x="42" y="1012" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="17" font-weight="normal" fill="#111111">
+<tspan x="42" dy="0">Gray: logical device choice / Blue: pilot feature / Green: retained paper channel / Dashed: proposed</tspan>
+</text>
+<text x="42" y="1039" text-anchor="start" font-family="DejaVu Sans,Arial,sans-serif" font-size="16" font-weight="normal" fill="#4a5664">
+<tspan x="42" dy="0">SFC tenant target / Synthetic pilot / External connections remain unverified</tspan>
+</text>
+</svg>

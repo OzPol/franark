@@ -77,6 +77,19 @@ class ApplicationTests(unittest.TestCase):
         self.assertEqual(len(config.json()["roles"]), 10)
         self.assertEqual(self.client.get("/").status_code, 200)
 
+    def test_diagram_downloads_use_the_published_allowlist(self):
+        index = self.client.get("/assets/diagrams").json()
+        self.assertIn("workflow", {view["id"] for view in index})
+        for view in index:
+            path = "/assets/diagrams/" + view["id"]
+            self.assertIn("<svg", self.client.get(path + ".svg").text)
+            scene = self.client.get(path + ".excalidraw")
+            self.assertEqual(scene.json()["type"], "excalidraw")
+            self.assertIn("attachment", scene.headers["Content-Disposition"])
+            self.assertTrue(self.client.get(path + ".mmd").text.strip())
+        for path in ("unknown.svg", "workflow.py", "atlas.json", "index.json"):
+            self.assertEqual(self.client.get("/assets/diagrams/" + path).status_code, 404)
+
     def test_capability_api_and_history_store_telemetry_without_source_content(self):
         config = self.client.get("/api/capabilities").json()
         self.assertEqual(len(config["methods"]), 6)
